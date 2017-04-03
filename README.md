@@ -2,8 +2,9 @@ Worlds Hardest Race
 -------------------
 
 ## Summary
-This is a parady of Worlds Hardest Game (by Snubby). You race a friends across 20 challenging levels. 
+This is a parady of Worlds Hardest Game (by Snubby). You race a friend across 20 challenging levels. 
 
+[Try it out](https://tylario.github.io/Worlds-Hardest-Race/Worlds%20Hardest%20Race.html)
 
 ## Usage
 The arrow keys control the red Charector 
