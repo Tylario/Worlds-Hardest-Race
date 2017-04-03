@@ -1,0 +1,4403 @@
+<html>
+	<head>
+	
+		<link rel="icon" type="image/png" href="image/redcube.png"/>
+		<title>World's Hardest Race</title>
+
+	</head>
+	<style>
+	
+	body{
+		overflow-y:hidden;
+		overflow-x:hidden;
+		
+	}
+
+	#container{
+		position:absolute;
+		top:0%;
+		left:12%;
+		width:75%;
+		height:99%;
+		background-color:#B5B5FF;
+		border:5px solid black;
+	}
+
+	.wall{
+		position:absolute;
+		border:  solid 5px black;
+		background-color:#B5B5ff;
+	}
+
+	#top_bar{
+		position:absolute;
+		color:white;
+		top:0;
+		width:100%;
+		height:45px;
+		background-color:black;
+	}
+
+	#bottom_bar{
+		position:absolute;
+		color:white;
+		bottom:0;
+		width:100%;
+		height:45px;
+		background-color:black;
+		font-size:37;
+	}
+
+	#left{
+		position:absolute;
+		left:10px;
+		font-size:37;
+	}
+
+	#right{
+		position:absolute;
+		left:50%;
+		font-size:37;
+	}
+	
+	#right2{
+		position:absolute;
+		left:90%;
+		font-size:37;
+	}
+
+	#arena{
+		transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+		position:absolute;
+		margin-top:-250px;
+		margin-left:-450px;
+		left:50%;
+		top:50%;
+		width:900px;
+		height:500px;
+		border:0px solid black;
+	}
+
+	#start{
+		position:absolute;
+		height:175px;
+		width:90px;
+		background-color:lightgreen;
+		bottom:170px;
+		left:5px;
+	}
+
+	#end{
+		position:absolute;
+		height:175px;
+		width:90px;
+		background-color:lightgreen;
+		bottom:170px;
+		right:5;
+	}
+	
+	#blue{
+		position:absolute;
+		height:23px;
+		width:23px;
+		background-color:blue;
+		border:6px solid black;
+		bottom:240px;
+		left:30px;
+	}
+
+	#red{
+		position:absolute;
+		height:23px;
+		width:23px;
+		bottom:320px;
+		left:30px;
+		background-color:red;
+		border:6px solid black;
+	}
+
+	#badguy1{
+		position:absolute;
+		height:13px;
+		width:13px;
+		background-color:blue;
+		border-radius:50%;
+		border:5px solid black;
+	}
+	
+	#badguy2{
+		position:absolute;
+		height:13px;
+		width:13px;
+		background-color:blue;
+		border-radius:50%;
+		border:5px solid black;
+	}
+	
+	#badguy3{
+		position:absolute;
+		height:13px;
+		width:13px;
+		background-color:blue;
+		border-radius:50%;
+		border:5px solid black;
+	}
+	
+	#badguy4{
+		position:absolute;
+		height:13px;
+		width:13px;
+		background-color:blue;
+		border-radius:50%;
+		border:5px solid black;
+	}
+	
+	#badguy5{
+		position:absolute;
+		height:13px;
+		width:13px;
+		background-color:blue;
+		border-radius:50%;
+		border:5px solid black;
+	}
+	
+	#badguy6{
+		position:absolute;
+		height:13px;
+		width:13px;
+		background-color:blue;
+		border-radius:50%;
+		border:5px solid black;
+	}
+	
+	#badguy7{
+		position:absolute;
+		height:13px;
+		width:13px;
+		background-color:blue;
+		border-radius:50%;
+		border:5px solid black;
+	}
+
+	#badguy8{
+		position:absolute;
+		height:13px;
+		width:13px;
+		background-color:blue;
+		border-radius:50%;
+		border:5px solid black;
+	}
+
+	#badguy9{
+		position:absolute;
+		height:13px;
+		width:13px;
+		background-color:blue;
+		border-radius:50%;
+		border:5px solid black;
+	}
+
+	#badguy10{
+		position:absolute;
+		height:13px;
+		width:13px;
+		background-color:blue;
+		border-radius:50%;
+		border:5px solid black;
+	}
+
+	#badguy11{
+		position:absolute;
+		height:13px;
+		width:13px;
+		background-color:blue;
+		border-radius:50%;
+		border:5px solid black;
+	}
+
+	#badguy12{
+		position:absolute;
+		height:13px;
+		width:13px;
+		background-color:blue;
+		border-radius:50%;
+		border:5px solid black;
+	}
+	
+	#white1{
+		position:absolute;
+		background-image: url('image/background.jpg');
+		background-repeat:repeat;
+	}
+
+	#white2{
+		position:absolute;
+		background-image: url('image/background.jpg');
+		background-repeat:repeat;
+	}
+
+	#blue1{
+		position:absolute;
+		background-color:#B5B5FF;
+	}
+
+	#blue2{
+		position:absolute;
+		background-color:#B5B5FF;
+	}
+
+	#blue3{
+		position:absolute;
+		background-color:#B5B5FF;
+	}
+
+	#blue4{
+		position:absolute;
+		background-color:#B5B5FF;
+	}
+	
+	#blue5{
+		position:absolute;
+		background-color:#B5B5FF;
+	}
+	
+	#blue6{
+		position:absolute;
+		background-color:#B5B5FF;
+	}
+	#blue7{
+		position:absolute;
+		background-color:#B5B5FF;
+	}
+
+	#blue8{
+		position:absolute;
+		background-color:#B5B5FF;
+	}
+
+	#blue9{
+		position:absolute;
+		background-color:#B5B5FF;
+	}
+
+	#blue10{
+		position:absolute;
+		background-color:#B5B5FF;
+
+	}
+
+	#blue11{
+		position:absolute;
+		background-color:#B5B5FF;
+
+	}
+
+	#blue12{
+		position:absolute;
+		background-color:#B5B5FF;
+	}
+	
+	#blue13{
+		position:absolute;
+		background-color:#B5B5FF;
+	}
+	
+	#blue14{
+		position:absolute;
+		background-color:#B5B5FF;
+	}
+	
+	#coin1{
+		transform: rotateY(0deg);
+		position:absolute;
+		background-color:yellow;
+		border-radius:50%;
+		width:13px;
+		height:13px;
+		border:5px solid black;
+	}
+	
+	#coin2{
+		position:absolute;
+		background-color:yellow;
+		border-radius:50%;
+		width:13px;
+		height:13px;
+		border:5px solid black;
+	}
+	
+	#coin3{
+		position:absolute;
+		background-color:yellow;
+		border-radius:50%;
+		width:13px;
+		height:13px;
+		border:5px solid black;
+	}
+	
+	.dominant{
+		position:fixed;
+		z-index:10000;
+	}
+
+	</style>
+	
+	<body>
+		<div id="container">
+			<div id="top_bar">
+				<div id="left">BLUE: <small>wins:
+					<span id="blue_win">
+					</span>
+				deaths:	
+					<span id="blue_death">
+					</span></small>
+				</div>
+			<div id="right">
+			RED: <small>wins: 
+				<span id="red_win">
+				</span> 
+			deaths:
+				<span id="red_death">
+				</span></small>
+			</div>
+		</div>
+			<div id="bottom_bar">
+				
+				<div id="left" onclick="notify()">
+				<bold> Tylar.io</bold>
+			</div>
+				<div id="right2" onclick="reset()">
+					Skip
+				</div>
+				<center>
+					<small>
+						<span id="clock"></span> 
+					</small>
+				</center>
+			</div>
+			
+		<center>
+			<div id="arena">
+
+				<div id="white1"></div>
+				<div id="white2"></div>
+				
+				<div id="coin1"></div>
+				<div id="coin2"></div>
+				<div id="coin3"></div>
+
+				<div id="blue1"></div>
+				<div id="blue2"></div>
+				<div id="blue3"></div>
+				<div id="blue4"></div>
+				<div id="blue5"></div>
+				<div id="blue6"></div>
+				<div id="blue7"></div>
+				<div id="blue8"></div>
+				<div id="blue9"></div>
+				<div id="blue10"></div>
+				<div id="blue11"></div>
+				<div id="blue12"></div>
+				
+				<div id="badguy1"></div>
+				<div id="badguy2"></div>
+				<div id="badguy3"></div>
+				<div id="badguy4"></div>
+				<div id="badguy5"></div>
+				<div id="badguy6"></div>
+				<div id="badguy7"></div>
+				<div id="badguy8"></div>
+				<div id="badguy9"></div>
+				<div id="badguy10"></div>
+				<div id="badguy11"></div>
+				<div id="badguy12"></div>
+
+				<div id="start"></div>
+				<div id="end"></div>
+				<div id="red" id="red"></div>
+
+				<div id="blue" id="blue"></div>
+					<div class="dominant">
+						<img src="image/introa.png" id="intro" width="900px" height="500px">
+					</div>
+				</div>
+		</center>
+		</div>
+	</body>
+	
+	<script>
+		if (!Array.prototype.forEach) {
+			Array.prototype.forEach = function (callback) {
+				for (var i = 0; i < this.length; i++) {
+				callback(this[i], i);
+				}
+			};
+		}
+
+		//x position, y position
+		var badguypos = [
+			[],
+			[],
+			[],
+			[],
+			[],
+			[],
+			[],
+			[],
+			[],
+			[],
+			[],
+			[],
+			[],
+			[],
+			[],
+		]
+
+
+		var badguymove = function(){  };
+		
+		var clock = 0;
+		var countera = 0;
+		var rotate = 0;
+		
+		var circlea = -4;
+		var circleb = 0;
+		var circlec = 2;
+		var circled = -2;
+		var circlee = 0;
+		var circlef = -4;
+		
+		var redcoin = false;
+		var bluecoin = false;
+		var coinx = 300;
+		var coiny = 200;
+		
+		var levelchooser = 0;
+		
+		var singleplayer = false;
+		
+		var enemies = [];
+		var startyet = false;
+		
+		var red = {
+			wins: 0,
+			deaths: 0,
+			pos: {
+				x: 44,
+				y: 292
+			},
+			movement: {
+				left: false,
+				right: false,
+				up: false,
+				down: false
+			}
+		};
+		
+		var blue = {
+			wins: 0,
+			deaths: 0,
+			pos: {
+				x: 44,
+				y: 212
+			},
+			movement: {
+				left: false,
+				right: false,
+				up: false,
+				down: false
+			}
+		};
+
+		//x minimum x maximum y minimum y maximum
+		var walls = [
+			[0, 0, 165, 340],
+			[0, 85, 165, 165],
+			[0, 85, 340, 340],
+			[890, 890, 165, 340],
+			[805, 890, 165, 165],
+			[805, 890, 340, 340],
+			[85, 85, 340, 490],
+			[85, 85, 0, 165],
+			[805, 805, 340, 490],
+			[805, 805, 0, 165],
+			[85, 805, 0, 0],
+			[85, 805, 490, 490],
+			[350, 350, 0, 210],
+			[350, 350, 280, 490],
+			[420, 470, 50, 440],
+			[540, 540, 0, 210],
+			[540, 540, 280, 490],
+		];
+		
+		
+
+	init();
+
+	function init(){
+
+		setTimeout(function(){document.getElementById('intro').src = 'image/introb.png';}, 1000);
+		setTimeout(function(){b()}, 3000);
+		
+	}
+	
+	function notify(){
+		alert("Hello! You clicked on the word Tylar.io. That is the creator of this games nickname. Do you like it? If you have any ideas for levels or suggestions email them to me at tyler2hudson@gmail.com or 1634990@student.ucps.k12.nc.us, I will be happy to make it and have your name as well on the level.");
+	}
+	
+	function a(){
+	
+		if(startyet == false){
+		document.getElementById('intro').src = 'image/titleb.png';
+		document.getElementById('intro').style.width = '901px';
+		setTimeout(function(){b()}, 500);
+		
+		}
+
+	}
+
+	function b(){
+	
+		if(startyet == false){
+
+			document.getElementById('intro').style.width = '900px';
+			document.getElementById('intro').src = 'image/titlea.png';
+			setTimeout(function(){a()}, 1000);
+		}
+	}
+
+	function race(){
+	
+		document.getElementById('intro').style.width = '0px' ;
+		if(startyet == false){
+			reset();
+			startyet = true;
+		}
+	}
+
+	function single_player(){
+		document.getElementById('intro').style.width = '0px';
+
+		if(startyet == false){
+			singleplayer = true;
+			document.getElementById('blue').style.width = '0';
+			document.getElementById('blue').style.border = '0px';
+			
+			reset();
+			startyet = true;
+		}
+	}
+
+	function onkeydown(e) {
+	          if(e.keyCode==39) {e.preventDefault(); red.movement.right = true; konamid();} //right arrow
+		else if(e.keyCode==37) {e.preventDefault(); red.movement.left = true;} //left arrow
+		else if(e.keyCode==38) {e.preventDefault(); red.movement.up = true;} //up arrow
+		else if(e.keyCode==40) {e.preventDefault(); red.movement.down = true;} //down arrow
+
+ 		else if(e.keyCode==68) {e.preventDefault(); blue.movement.right = true;} //D arrow
+ 		else if(e.keyCode==65) {e.preventDefault(); blue.movement.left = true;} //A arrow
+  		else if(e.keyCode==87) {e.preventDefault(); blue.movement.up = true;} //W arrow
+ 		else if(e.keyCode==83) {e.preventDefault(); blue.movement.down = true;} //S arrow
+  		else if(e.keyCode==32) {e.preventDefault(); race();} //spacebar
+		
+ 		else if(e.keyCode==88) {e.preventDefault(); single_player();} //X
+		
+		else if(e.keyCode==66) {e.preventDefault(); konamia()} //B
+		else if(e.keyCode==65) {e.preventDefault(); konamib();} //A
+		else if(e.keyCode==13) {e.preventDefault(); konamic();} //Enter
+
+
+	}
+	function konamid(){
+		lastpressed = 'right';
+	}
+	
+	function konamia(){
+		if(lastpressed == 'right'){
+			lastpressed = 'b';
+		} else {
+			lastpressed = 'no'
+		}
+	}
+	
+	function konamib(){
+		if(lastpressed == 'b'){
+			lastpressed = 'a';
+		} else {
+			lastpressed = 'no'
+		}
+	}
+	
+	function konamic(){
+		if(lastpressed == 'b'){
+			mlg();
+		}
+	}
+	
+	var movea = 0;
+	var moveb = 0;
+	var movec = 0;
+	var xtoggle = true;
+	
+	function mlg(){
+			
+		moveb = moveb + 0.1;
+
+	if(xtoggle == true){
+		movea = movea + 0.2;
+		movec = movec + 0.05;
+	} else {
+		movea = movea - 0.2;
+		movec = movec - 0.05;	
+	}
+	if(xtoggle == true && movec > 10){
+		xtoggle = false;
+	}
+	if(xtoggle == false && movec < -10){
+		xtoggle = true;
+	}
+	document.getElementById('arena').style.transform = 'rotateY('+movea+'deg) rotateX('+movec+'deg) rotateZ('+moveb+'deg)'
+			setTimeout(function(){mlg()}, 10);
+	}
+	
+	window.addEventListener("keydown", onkeydown);
+
+	function onkeyup(e) {
+ 	          if(e.keyCode==39) {e.preventDefault(); red.movement.right = false;} //right arrow
+ 		else if(e.keyCode==37) {e.preventDefault(); red.movement.left = false;} //left arrow
+ 		else if(e.keyCode==38) {e.preventDefault(); red.movement.up = false;} //up arrow
+		else if(e.keyCode==40) {red.movement.down = false;} //down arrow
+
+		else if(e.keyCode==68) {e.preventDefault(); blue.movement.right = false;} //D arrow
+		else if(e.keyCode==65) {e.preventDefault(); blue.movement.left = false;} //A arrow
+		else if(e.keyCode==87) {e.preventDefault(); blue.movement.up = false;} //W arrow
+ 		else if(e.keyCode==83) {e.preventDefault(); blue.movement.down = false;} //S arrow
+	}
+
+	window.addEventListener("keyup", onkeyup);
+
+
+	setInterval (function(){
+		var redNextPosition = {
+			x: red.pos.x,
+			y: red.pos.y 
+		};
+		
+		if (red.movement.left){
+			redNextPosition.x -= 2;
+		}
+		
+		if (red.movement.right) {
+			redNextPosition.x += 2;
+		}
+		
+		if (red.movement.up) {
+			redNextPosition.y += 2;
+		}
+		
+		if (red.movement.down) {
+			redNextPosition.y -= 2;
+		}
+		
+	walls.forEach(function (wall) {
+		collisionCheck(wall, redNextPosition, red);
+	});
+	
+	red.pos = redNextPosition;
+
+	var blueNextPosition = {
+		x: blue.pos.x,
+		y: blue.pos.y 
+		};
+		
+	if (blue.movement.left) {
+		blueNextPosition.x -= 2;
+	}
+	
+	if (blue.movement.right) {
+		blueNextPosition.x += 2;
+	}
+	
+	if (blue.movement.up) {
+		blueNextPosition.y += 2;
+	}
+	
+	if (blue.movement.down) {
+		blueNextPosition.y -= 2;
+	}
+	
+	walls.forEach(function (wall) {
+		collisionCheck(wall, blueNextPosition, blue);
+	});
+	
+	blue.pos = blueNextPosition;
+
+
+	if(red.pos.x>790 && redcoin == true){
+		reset();
+		red.wins = red.wins+1;
+		red.pos.y = 292;
+		red.pos.x = 44;
+		blue.pos.y = 212;
+		blue.pos.x = 44;
+	}
+	
+	if(blue.pos.x > 790 && bluecoin == true){
+		reset();
+		blue.wins = blue.wins+1;
+		red.pos.y = 292;
+		red.pos.x = 44;
+		blue.pos.y = 212;
+		blue.pos.x = 44;
+	}
+
+	document.getElementById('blue_win').innerText = blue.wins;
+	document.getElementById('blue_death').innerText = blue.deaths;
+	document.getElementById('red_win').innerText = red.wins;
+	document.getElementById('red_death').innerText = red.deaths;
+
+	document.getElementById('red').style.bottom = red.pos.y-12;
+	document.getElementById('red').style.left = red.pos.x-12;
+	document.getElementById('blue').style.bottom = blue.pos.y-12;
+	document.getElementById('blue').style.left = blue.pos.x-12;
+
+	badguymove();
+
+	document.getElementById('badguy1').style.left = badguypos[0][0];
+	document.getElementById('badguy1').style.bottom = badguypos[0][1];
+	document.getElementById('badguy2').style.left = badguypos[1][0];
+	document.getElementById('badguy2').style.bottom = badguypos[1][1];
+	document.getElementById('badguy3').style.left = badguypos[2][0];
+	document.getElementById('badguy3').style.bottom = badguypos[2][1];
+	document.getElementById('badguy4').style.left = badguypos[3][0];
+	document.getElementById('badguy4').style.bottom = badguypos[3][1];
+	document.getElementById('badguy5').style.left = badguypos[4][0];
+	document.getElementById('badguy5').style.bottom = badguypos[4][1];
+	document.getElementById('badguy6').style.left = badguypos[5][0];
+	document.getElementById('badguy6').style.bottom = badguypos[5][1];
+	document.getElementById('badguy7').style.left = badguypos[6][0];
+	document.getElementById('badguy7').style.bottom = badguypos[6][1];
+	document.getElementById('badguy8').style.left = badguypos[7][0];
+	document.getElementById('badguy8').style.bottom = badguypos[7][1];
+	document.getElementById('badguy9').style.left = badguypos[8][0];
+	document.getElementById('badguy9').style.bottom = badguypos[8][1];
+	document.getElementById('badguy10').style.left = badguypos[9][0];
+	document.getElementById('badguy10').style.bottom = badguypos[9][1];
+	document.getElementById('badguy11').style.left = badguypos[10][0];
+	document.getElementById('badguy11').style.bottom = badguypos[10][1];
+	document.getElementById('badguy12').style.left = badguypos[11][0];
+	document.getElementById('badguy12').style.bottom = badguypos[11][1];
+
+	document.getElementById('coin1').style.bottom = coiny;
+	document.getElementById('coin1').style.left = coinx;
+	
+	if(bluecoin == true){
+		document.getElementById('coin2').style.bottom = 205;
+		document.getElementById('coin2').style.left = -30;
+	}else
+		{document.getElementById('coin2').style.bottom = -1000;}
+
+	if(redcoin == true){
+		document.getElementById('coin3').style.bottom = 285;
+		document.getElementById('coin3').style.left = -30;
+	}else
+		{document.getElementById('coin3').style.bottom = -1000;}
+
+	
+	if(coinx + 30 > red.pos.x && coinx - 20 < red.pos.x && coiny + 30 > red.pos.y && coiny - 20 < red.pos.y )
+		{if(redcoin == false){
+			var audio = new Audio('sound/coin.mp3');
+			audio.play();}
+			document.getElementById('coin1').style.opacity = '0.5';
+			redcoin = true;
+			setTimeout(function(){document.getElementById('coin1').style.opacity = '1';}, 500);	
+	}
+	if(coinx + 30 > blue.pos.x && coinx - 20 < blue.pos.x && coiny + 30 > blue.pos.y && coiny - 20 < blue.pos.y )
+		{if(bluecoin == false){
+			var audio = new Audio('sound/coin.mp3');
+			audio.play();}
+			bluecoin = true;
+			document.getElementById('coin1').style.opacity = '0.5';
+			setTimeout(function(){document.getElementById('coin1').style.opacity = '1';}, 500);
+	}
+	
+	clock = clock + 0.1;
+	
+	if(startyet==true){
+		document.getElementById('clock').innerText = Math.floor(clock*1)/10;
+	}
+
+	for(var i = 0; i < badguypos.length; i++){
+		if(badguypos[i][0]+30 > red.pos.x && badguypos[i][0]-20 < red.pos.x && badguypos[i][1]+30 > red.pos.y && badguypos[i][1]-20 < red.pos.y){
+			var audio = new Audio('sound/die.mp3');
+			audio.play();cbluecoin = true;
+			red.pos.y = 292;
+			red.pos.x = 44;
+			red.deaths++;
+			redcoin = false;
+		}
+		
+		if(badguypos[i][0]+30 > blue.pos.x && badguypos[i][0]-20 < blue.pos.x && badguypos[i][1]+30 > blue.pos.y && badguypos[i][1]-20 < blue.pos.y){
+			blue.pos.y = 212;
+			blue.pos.x = 44;
+			if(document.getElementById('blue').style.width != '0px'){
+				var audio = new Audio('sound/die.mp3');
+				audio.play(); bluecoin = true;
+				blue.deaths++;
+				bluecoin = false;
+			}
+		}
+	}
+	rotate = rotate + 1.5;
+	
+	if(rotate >= 340){
+		rotate = 20;
+	}
+	
+	document.getElementById('coin1').style.transform = 'rotateY('+rotate+'deg)'
+
+	}, 10)
+
+	function bluewin(){
+		document.getElementById('red').style.bottom = red.pos.y - 12;
+		document.getElementById('red').style.left = red.pos.x - 12;
+		document.getElementById('blue').style.bottom = blue.pos.y - 12;
+		document.getElementById('blue').style.left = blue.pos.x - 12;
+	}
+
+	function reset(){
+		clock = 0;
+		redcoin = false;
+		bluecoin = false;
+		red.pos.y = 292;
+		red.pos.x = 44;
+		blue.pos.y = 212;
+		blue.pos.x = 44;
+		
+		document.getElementById('blue1').style.width = '0px';
+		document.getElementById('blue2').style.width = '0px';
+		document.getElementById('blue3').style.width = '0px';
+		document.getElementById('blue4').style.width = '0px';
+		document.getElementById('blue5').style.width = '0px';
+		document.getElementById('blue6').style.width = '0px';
+		document.getElementById('blue7').style.width = '0px';
+		document.getElementById('blue8').style.width = '0px';
+		document.getElementById('blue9').style.width = '0px';
+		document.getElementById('blue10').style.width = '0px';
+		document.getElementById('blue11').style.width = '0px';
+		document.getElementById('blue12').style.width = '0px';
+
+		document.getElementById('white1').style.height = '0';
+		document.getElementById('white2').style.height = '0';
+
+		var toRemove = [];
+		for(var i = 0; i < arena.childNodes.length; i++){
+			if (arena.childNodes[i].className === 'wall'){
+				toRemove.push(arena.childNodes[i]);
+			}
+		}
+		
+		for(var i = 0; i < toRemove.length; i++){
+			arena.removeChild(toRemove[i]);
+		}
+		if(singleplayer == true){
+			if(levelchooser <= 19){
+				levelchooser++;
+			} else
+			{
+				levelchooser = 0.5;
+			}
+		}else{
+			levelchooser = Math.random()*20;							//!!! LEVEL CHOOSER !!!//
+			//levelchooser = 20;
+		}
+		if(levelchooser <= 1){
+			lvl1();
+		} else
+		if(levelchooser <= 2){
+			lvl2();
+		} else
+		if(levelchooser <= 3){
+			lvl3();
+		} else
+		if(levelchooser <= 4){
+			lvl4();
+		} else
+		if(levelchooser <= 5){
+			lvl5();
+		} else
+		if(levelchooser <= 6){
+			lvl6();
+		} else
+		if(levelchooser <= 7){
+			lvl7();
+		} else
+		if(levelchooser <= 8){
+			lvl8();
+		} else
+		if(levelchooser <= 9){
+			lvl9();
+		} else
+		if(levelchooser <= 10){
+			lvl10();
+		} else
+		if(levelchooser <= 11){
+			lvl11();
+		} else
+		if(levelchooser <= 12){
+			lvl12();
+		} else
+		if(levelchooser <= 13){
+			lvl13();
+		} else
+		if(levelchooser <= 14){
+			lvl14();
+		} else
+		if(levelchooser <= 15){
+			lvl15();
+		} else
+		if(levelchooser <= 16){
+			lvl16();
+		} else
+		if(levelchooser <= 17){
+			lvl17();
+		} else
+		if(levelchooser <= 18){
+			lvl18();
+		} else
+		if(levelchooser <= 19){
+			lvl19();
+		} else
+		if(levelchooser <= 20){
+			lvl20();
+		} 
+		
+		
+
+
+
+		for ( var i = 0; i < walls.length; i++){
+			var newElement = document.createElement('div');
+			
+			newElement.className = 'wall';
+			newElement.style.bottom = walls[i][2];
+			newElement.style.left = walls[i][0];
+			newElement.style.width = walls[i][1] - walls[i][0];
+			newElement.style.height = walls[i][3] - walls[i][2];
+			
+			document.getElementById('arena').appendChild(newElement);
+		}
+	}
+
+	function collisionCheck (wall, nexPosition, box) {
+
+		if(wall[0]-20<nexPosition.x && wall[1]+20>nexPosition.x){
+			if(wall[2]-20<box.pos.y && wall[3]+20>box.pos.y){
+				nexPosition.x = box.pos.x;
+			}
+		}
+
+		if(wall[0]-20<box.pos.x && wall[1]+20>box.pos.x){
+			if(wall[2]-20<nexPosition.y && wall[3]+20>nexPosition.y){
+				nexPosition.y = box.pos.y;
+			}
+		}
+	}
+
+	function lvl1(){				/***/ // LEVEL ONE // /***/
+
+		coinx = 533;
+		coiny = 239;
+		
+		document.getElementById('white1').style.width = '725px';
+		document.getElementById('white1').style.height = '495px';
+		document.getElementById('white1').style.left = '85px';
+		document.getElementById('white1').style.bottom = '0px';
+
+		walls = [
+			[0, 0, 165, 340],
+			[0, 85, 165, 165],
+			[0, 85, 340, 340],
+			[890, 890, 165, 340],
+			[805, 890, 165, 165],
+			[805, 890, 340, 340],
+			[85, 85, 340, 490],
+			[85, 85, 0, 165],
+			[805, 805, 340, 490],
+			[805, 805, 0, 165],
+			[85, 805, 0, 0],
+			[85, 805, 490, 490],
+			[350, 350, 0, 210],
+			[350, 350, 280, 490],
+			[420, 470, 50, 440],
+			[540, 540, 0, 210],
+			[540, 540, 280, 490],
+		];
+		
+		toggle = [
+			false, false, "right"
+		]
+		
+		badguypos[0][0] = 380;
+		badguypos[0][1] = 20;
+		badguypos[1][0] = 500;
+		badguypos[1][1] = 455;
+		badguypos[2][0] = 380;
+		badguypos[2][1] = 455;
+		badguypos[3][0] = -1000;
+		badguypos[3][1] = -1000;
+		badguypos[4][0] = -1000;
+		badguypos[4][1] = -1000;
+		badguypos[5][0] = -1000;
+		badguypos[5][1] = -1000;
+		badguypos[6][0] = -1000;
+		badguypos[6][1] = -1000;
+		badguypos[7][0] = -1000;
+		badguypos[7][1] = -1000;
+		badguypos[8][0] = -1000;
+		badguypos[8][1] = -1000;
+		badguypos[9][0] = -1000;
+		badguypos[9][1] = -1000;
+		badguypos[10][0] = -1000;
+		badguypos[10][1] = -1000;
+		badguypos[11][0] = -1000;
+		badguypos[11][1] = -1000;
+	
+		badguymove = function(){
+	
+			if(toggle[2] == "right"){
+				badguypos[2][0]=badguypos[2][0]+2
+			}
+			if(toggle[2] == "right" && badguypos[2][0] > 500){
+				toggle[2] = "down"
+			}
+			if(toggle[2] == "down"){
+				badguypos[2][1] = badguypos[2][1]-2
+			}
+			if(toggle[2] == "down" && badguypos[2][1] < 22){
+				toggle[2] = "left"
+			}
+			if(toggle[2] == "left"){
+				badguypos[2][0] = badguypos[2][0]-2
+			}
+			if(toggle[2] == "left" && badguypos[2][0] < 380){
+				toggle[2] = "up"
+			}
+			if(toggle[2] == "up"){
+				badguypos[2][1] = badguypos[2][1]+2
+			}
+			if(toggle[2] == "up" && badguypos[2][1] > 455){
+				toggle[2] = "right"
+			}
+	
+			if(badguypos[0][1] > 450){
+				toggle[0] = false
+			}
+			if(badguypos[0][1] < 22){
+				toggle[0] = true
+			}
+	
+			if(toggle[0] == true)
+				{badguypos[0][1] = badguypos[0][1]+4 
+			} else 
+				{badguypos[0][1] = badguypos[0][1]-4
+			}
+			if(toggle[0] == false){
+				badguypos[1][1] = badguypos[1][1]+4 
+			} else {
+				badguypos[1][1] = badguypos[1][1]-4
+			}
+		}
+	}
+
+	function lvl2(){				/***/ // LEVEL TWO // /***/
+		
+		coinx = 440;
+		coiny = 320;
+		
+		document.getElementById('white1').style.width = '725px';
+		document.getElementById('white1').style.height = '220px';
+		document.getElementById('white1').style.left = '85px';
+		document.getElementById('white1').style.bottom = '150px';
+
+		walls = [
+			[0, 0, 165, 340],
+			[0, 85, 165, 165],
+			[0, 85, 340, 340],
+			[890, 890, 165, 340],
+			[805, 890, 165, 165],
+			[805, 890, 340, 340],
+			[85, 85, 140, 160],
+			[85, 85, 345, 365],
+			[805, 805, 140, 160],
+			[805, 805, 345, 365],
+			[85, 805, 140, 140],
+			[85, 805, 370, 370]
+
+		];
+		
+		toggle = [
+			false, 
+			false,
+			false,
+			false,
+			false,
+			false, 
+			false
+		]
+		
+		badguypos[0][0] = 200;
+		badguypos[0][1] = 340;
+		badguypos[1][0] = 310;
+		badguypos[1][1] = 295;
+		badguypos[2][0] = 420;
+		badguypos[2][1] = 250;
+		badguypos[3][0] = 530;
+		badguypos[3][1] = 205;
+		badguypos[4][0] = 640;
+		badguypos[4][1] = 160;
+		badguypos[5][0] = 530;
+		badguypos[5][1] = 160;
+		badguypos[6][0] = 350;
+		badguypos[6][1] = 160;
+		badguypos[7][0] = -1000;
+		badguypos[7][1] = -1000;
+		badguypos[8][0] = -1000;
+		badguypos[8][1] = -1000;
+		badguypos[9][0] = -1000;
+		badguypos[9][1] = -1000;
+		badguypos[10][0] = -1000;
+		badguypos[10][1] = -1000;
+		badguypos[11][0] = -1000;
+		badguypos[11][1] = -1000;
+	
+		badguymove = function(){
+			if(badguypos[0][0]<200){
+				toggle[0]=true
+			}
+			if(badguypos[0][0]>680){
+				toggle[0]=false
+			}
+			if(badguypos[1][0]<200){
+				toggle[1]=true
+			}
+			if(badguypos[1][0]>680){
+				toggle[1]=false
+			}
+			if(badguypos[2][0]<200){
+				toggle[2]=true
+			}
+			if(badguypos[2][0]>680){
+				toggle[2]=false
+			}
+			if(badguypos[3][0]<200){
+				toggle[3]=true
+			}
+			if(badguypos[3][0]>680){
+				toggle[3]=false
+			}
+			if(badguypos[4][0]<200){
+				toggle[4]=true
+			}
+			if(badguypos[4][0]>680){
+				toggle[4]=false
+			}
+	
+			if(badguypos[5][1]>340){
+				toggle[5]=false
+			}
+			if(badguypos[5][1]<160){
+				toggle[5]=true
+			}
+			if(badguypos[6][1]>340){
+				toggle[6]=false
+			}
+			if(badguypos[6][1]<160){
+				toggle[6]=true
+			}
+	
+			if(toggle[0]==true){
+				badguypos[0][0]=badguypos[0][0]+2
+			} else 
+				{badguypos[0][0]=badguypos[0][0]-2
+			}
+			if(toggle[1]==true){
+				badguypos[1][0]=badguypos[1][0]+2
+			} else 
+				{badguypos[1][0]=badguypos[1][0]-2
+			}
+			if(toggle[2]==true){
+				badguypos[2][0]=badguypos[2][0]+2
+			}else
+				{badguypos[2][0]=badguypos[2][0]-2}
+			if(toggle[3]==true){
+				badguypos[3][0]=badguypos[3][0]+2
+			} else
+				{badguypos[3][0]=badguypos[3][0]-2}
+			if(toggle[4]==true){
+				badguypos[4][0]=badguypos[4][0]+2
+			} else
+				{badguypos[4][0]=badguypos[4][0]-2}
+			if(toggle[5]==true){
+				badguypos[5][1]=badguypos[5][1]+2
+			} else
+				{badguypos[5][1]=badguypos[5][1]-2}
+			if(toggle[6]==true){
+				badguypos[6][1]=badguypos[6][1]+2
+			} else
+				{badguypos[6][1]=badguypos[6][1]-2}
+		}
+	}
+
+	function lvl3(){				/***/ // LEVEL THREE // /***/
+
+		coinx = 438;
+		coiny = 245;
+		
+		document.getElementById('white1').style.width = '725px';
+		document.getElementById('white1').style.height = '300px';
+		document.getElementById('white1').style.left = '85px';
+		document.getElementById('white1').style.bottom = '105px';
+
+		walls = [
+			[0, 0, 165, 340],
+			[0, 85, 165, 165],
+			[0, 85, 340, 340],
+			[890, 890, 165, 340],
+			[805, 890, 165, 165],
+			[805, 890, 340, 340],
+			[85, 85, 100, 160],
+			[85, 85, 345, 395],
+			[805, 805, 100, 160],
+			[805, 805, 345, 395],
+			[85, 805, 100, 100],
+			[85, 805, 400, 400],
+		];
+		
+		toggle = [
+			false, false
+		]
+		
+		badguypos[0][0] = 320;
+		badguypos[0][1] = 120;
+		badguypos[1][0] = 360;
+		badguypos[1][1] = 370;
+		badguypos[2][0] = 410;
+		badguypos[2][1] = 120;
+		badguypos[3][0] = 465;
+		badguypos[3][1] = 370;
+		badguypos[4][0] = 515;
+		badguypos[4][1] = 120;
+		badguypos[5][0] = 555;
+		badguypos[5][1] = 370;
+		badguypos[6][0] = -1000;
+		badguypos[6][1] = -1000;
+		badguypos[7][0] = -1000;
+		badguypos[7][1] = -1000;
+		badguypos[8][0] = -1000;
+		badguypos[8][1] = -1000;
+		badguypos[9][0] = -1000;
+		badguypos[9][1] = -1000;
+		badguypos[10][0] = -1000;
+		badguypos[10][1] = -1000;
+		badguypos[11][0] = -1000;
+		badguypos[11][1] = -1000;
+	
+	
+		badguymove = function(){
+			if(toggle[0] == false){
+				badguypos[0][1]=badguypos[0][1]+3;
+				badguypos[2][1]=badguypos[2][1]+3;
+				badguypos[4][1]=badguypos[4][1]+3;
+			}
+			else {
+				badguypos[0][1]=badguypos[0][1]-3;
+				badguypos[2][1]=badguypos[2][1]-3;
+				badguypos[4][1]=badguypos[4][1]-3;
+			}
+			if(toggle[1] == true){
+				badguypos[1][1]=badguypos[1][1]+3;
+				badguypos[3][1]=badguypos[3][1]+3;
+				badguypos[5][1]=badguypos[5][1]+3;
+			}
+			else {
+				badguypos[1][1]=badguypos[1][1]-3;
+				badguypos[3][1]=badguypos[3][1]-3;
+				badguypos[5][1]=badguypos[5][1]-3;
+			}
+			if(toggle[0] == false && badguypos[0][1]>370){
+				toggle[0] = true
+			}
+			if(toggle[1] == false && badguypos[1][1]<120){
+				toggle[1] = true
+			}
+			if(toggle[0] == true && badguypos[0][1]<120){
+				toggle[0] = false
+			}
+			if(toggle[1] == true && badguypos[1][1]>370){
+				toggle[1] = false
+			}
+		}
+	}
+	
+	function lvl4(){				/***/ // LEVEL FOUR // /***/
+		
+		coinx = 360;
+		coiny = 65;
+		circlea = -4;
+		circleb = 0;
+		
+		document.getElementById('white1').style.width = '725px';
+		document.getElementById('white1').style.height = '350px';
+		document.getElementById('white1').style.left = '85px';
+		document.getElementById('white1').style.bottom = '55px';
+
+		walls = [
+			[0, 0, 165, 340],
+			[0, 85, 165, 165],
+			[0, 85, 340, 340],
+			[890, 890, 165, 340],
+			[805, 890, 165, 165],
+			[805, 890, 340, 340],
+			[85, 85, 50, 160],
+			[85, 85, 345, 395],
+			[805, 805, 50, 160],
+			[805, 805, 345, 395],
+			[85, 805, 50, 50],
+			[85, 805, 400, 400],
+			[345, 345, 50, 220],
+			[545, 545, 280, 400]
+		];
+		
+		toggle = [
+			true, false
+		]
+	
+		badguypos[0][0] = 345;
+		badguypos[0][1] = 122;
+		badguypos[1][0] = 345;
+		badguypos[1][1] = 165;
+		badguypos[2][0] = 345;
+		badguypos[2][1] = 205;
+		badguypos[3][0] = 545;
+		badguypos[3][1] = 122;
+		badguypos[4][0] = 545;
+		badguypos[4][1] = 165;
+		badguypos[5][0] = 545;
+		badguypos[5][1] = 205;
+	
+		badguypos[6][0] = 440;
+		badguypos[6][1] = 245;
+		badguypos[7][0] = -1000;
+		badguypos[7][1] = -1000;
+		badguypos[8][0] = -1000;
+		badguypos[8][1] = -1000;
+		badguypos[9][0] = -1000;
+		badguypos[9][1] = -1000;	
+		badguypos[10][0] = -1000;
+		badguypos[10][1] = -1000;
+		badguypos[11][0] = -1000;
+		badguypos[11][1] = -1000;
+
+		badguymove = function(){
+			if(circlea>=4){
+				toggle[0] = true
+			}
+			if(circlea<=-4){
+				toggle[0] = false
+			}
+			if(circleb>=4){
+				toggle[1] = true
+			}
+			if(circleb<=-4){
+				toggle[1] = false
+			}
+
+			if(toggle[0] == false){
+				circlea = circlea+0.1}else{circlea = circlea-0.1
+			}
+			if(toggle[1] == false){
+				circleb = circleb+0.1}else{circleb = circleb-0.1
+			}
+
+
+			badguypos[0][0] = badguypos[0][0] + circlea*1.55;
+			badguypos[0][1] = badguypos[0][1] + circleb*1.55;
+			badguypos[1][0] = badguypos[1][0] + circlea*1;
+			badguypos[1][1] = badguypos[1][1] + circleb*1;
+			badguypos[2][0] = badguypos[2][0] + circlea*0.5;
+			badguypos[2][1] = badguypos[2][1] + circleb*0.5;
+
+			badguypos[3][0] = badguypos[3][0] + circlea*1.55;
+			badguypos[3][1] = badguypos[3][1] + circleb*1.55;
+			badguypos[4][0] = badguypos[4][0] + circlea*1;
+			badguypos[4][1] = badguypos[4][1] + circleb*1;
+			badguypos[5][0] = badguypos[5][0] + circlea*0.5;
+			badguypos[5][1] = badguypos[5][1] + circleb*0.5;
+
+			badguypos[6][0] = badguypos[6][0] + (circlea*circlea*circlea)/6;
+
+		}
+	}
+
+	function lvl5(){				/***/ // LEVEL FIVE // /***/
+	
+		coinx = 270;
+		coiny = 395;
+		circlea = -4;
+		circleb = 0;
+
+		document.getElementById('blue1').style.width = '160px';
+		document.getElementById('blue1').style.height = '150px';
+		document.getElementById('blue1').style.left = '95px';
+		document.getElementById('blue1').style.bottom = '80px';
+	
+		document.getElementById('blue2').style.width = '160px';
+		document.getElementById('blue2').style.height = '150px';
+		document.getElementById('blue2').style.left = '95px';
+		document.getElementById('blue2').style.bottom = '280px';
+	
+		document.getElementById('blue3').style.width = '200px';
+		document.getElementById('blue3').style.height = '150px';
+		document.getElementById('blue3').style.left = '625px';
+		document.getElementById('blue3').style.bottom = '80px';
+	
+		document.getElementById('blue4').style.width = '200px';
+		document.getElementById('blue4').style.height = '150px';
+		document.getElementById('blue4').style.left = '625px';
+		document.getElementById('blue4').style.bottom = '280px';
+	
+		document.getElementById('blue5').style.width = '75px';
+		document.getElementById('blue5').style.height = '80px';
+		document.getElementById('blue5').style.left = '405px';
+		document.getElementById('blue5').style.bottom = '400px';
+	
+		document.getElementById('blue6').style.width = '75px';
+		document.getElementById('blue6').style.height = '80px';
+		document.getElementById('blue6').style.left = '405px';
+		document.getElementById('blue6').style.bottom = '30px';
+	
+		document.getElementById('white1').style.width = '710px';
+		document.getElementById('white1').style.height = '350px';
+		document.getElementById('white1').style.left = '95px';
+		document.getElementById('white1').style.bottom = '80px';
+
+		walls = [
+			[0, 0, 165, 340],
+			[0, 85, 165, 165],
+			[0, 85, 340, 340],
+			[890, 890, 165, 340],
+			[805, 890, 165, 165],
+			[805, 890, 340, 340],
+			[403, 473, 155, 350],
+			[300, 350, 228, 278],
+			[300, 350, 328, 378],
+			[300, 350, 128, 178],
+			[525, 575, 228, 278],
+			[525, 575, 328, 378],
+			[525, 575, 128, 178],
+			[403, 473, 400, 400],
+			[403, 473, 105, 105],
+			[403, 403, 400, 430],
+			[473, 473, 400, 430],
+			[403, 403, 75, 105],
+			[473, 473, 75, 105],
+			[253, 403, 75, 75],
+			[473, 623, 75, 75],
+			[253, 403, 430, 430],
+			[473, 623, 430, 430],
+			[253, 253, 280, 430],
+			[623, 623, 280, 430],
+			[253, 253, 75, 225],
+			[623, 623, 75, 225],
+			[100, 253, 280, 280],
+			[100, 253, 225, 225],
+			[623, 790, 280, 280],
+			[623, 790, 225, 225],
+			[795, 795, 165, 225],
+			[795, 795, 280, 340],
+			[95, 95, 165, 225],
+			[95, 95, 280, 340],
+		];
+		
+		toggle = [
+			"up", 
+			"up"
+		]
+	
+		badguypos[0][0] = 270;
+		badguypos[0][1] = 395;
+		badguypos[1][0] = 270;
+		badguypos[1][1] = 295;
+		badguypos[2][0] = 270;
+		badguypos[2][1] = 195;
+		badguypos[3][0] = 495;
+		badguypos[3][1] = 395;
+		badguypos[4][0] = 495;
+		badguypos[4][1] = 295;
+		badguypos[5][0] = 495;
+		badguypos[5][1] = 195;
+		badguypos[6][0] = 370;
+		badguypos[6][1] = 370;
+		badguypos[7][0] = -1000;
+		badguypos[7][1] = -1000;
+		badguypos[8][0] = -1000;
+		badguypos[8][1] = -1000;
+		badguypos[9][0] = -1000;
+		badguypos[9][1] = -1000;
+		badguypos[10][0] = -1000;
+		badguypos[10][1] = -1000;
+		badguypos[11][0] = -1000;
+		badguypos[11][1] = -1000;
+	
+	
+		badguymove = function(){
+	
+			if(badguypos[0][1] > 395 && toggle[1] == "up"){
+				toggle[1] = "left"
+			}
+			if(badguypos[0][0] > 370 && toggle[1] == "right"){
+				toggle[1] = "up"
+			}
+			if(badguypos[0][1] < 295 && toggle[1] == "down"){
+				toggle[1] = "right"
+			}
+			if(badguypos[0][0] < 270 && toggle[1] == "left"){
+				toggle[1] = "down"
+			}
+	
+			if(badguypos[6][1] > 365 && toggle[0] == "up"){
+				toggle[0] = "right"
+			}
+			if(badguypos[6][0] > 490 && toggle[0] == "right"){
+				toggle[0] = "down"
+			}
+			if(badguypos[6][1] < 125 && toggle[0] == "down"){
+				toggle[0] = "left"
+			}
+			if(badguypos[6][0] < 370 && toggle[0] == "left"){
+				toggle[0] = "up"
+			}
+
+			if(toggle[1] == "up"){
+				badguypos[0][1]=badguypos[0][1]+1.5;
+				badguypos[1][1]=badguypos[1][1]+1.5;
+				badguypos[2][1]=badguypos[2][1]+1.5;
+				badguypos[3][1]=badguypos[3][1]+1.5;
+				badguypos[4][1]=badguypos[4][1]+1.5;
+				badguypos[5][1]=badguypos[5][1]+1.5;
+			}
+			
+			if(toggle[1] == "down"){
+				badguypos[0][1]=badguypos[0][1]-1.5;
+				badguypos[1][1]=badguypos[1][1]-1.5;
+				badguypos[2][1]=badguypos[2][1]-1.5;
+				badguypos[3][1]=badguypos[3][1]-1.5;
+				badguypos[4][1]=badguypos[4][1]-1.5;
+				badguypos[5][1]=badguypos[5][1]-1.5;
+				}
+				
+			if(toggle[1] == "left"){
+				badguypos[0][0]=badguypos[0][0]-1.5;
+				badguypos[1][0]=badguypos[1][0]-1.5;
+				badguypos[2][0]=badguypos[2][0]-1.5;
+				badguypos[3][0]=badguypos[3][0]-1.5;
+				badguypos[4][0]=badguypos[4][0]-1.5;
+				badguypos[5][0]=badguypos[5][0]-1.5;
+			}
+			
+			if(toggle[1] == "right"){
+				badguypos[0][0]=badguypos[0][0]+1.5;
+				badguypos[1][0]=badguypos[1][0]+1.5;
+				badguypos[2][0]=badguypos[2][0]+1.5;
+				badguypos[3][0]=badguypos[3][0]+1.5;
+				badguypos[4][0]=badguypos[4][0]+1.5;
+				badguypos[5][0]=badguypos[5][0]+1.5;
+			}
+
+			if(toggle[0] == "right"){
+				badguypos[6][0]=badguypos[6][0]+3;
+			}
+			if(toggle[0] == "left"){
+				badguypos[6][0]=badguypos[6][0]-3;
+			}
+			if(toggle[0] == "up"){
+				badguypos[6][1]=badguypos[6][1]+3;
+			}
+			if(toggle[0] == "down"){
+				badguypos[6][1]=badguypos[6][1]-3;
+			}
+
+		}
+	}
+
+	function lvl6(){					/***/ // LEVEL SIX // /***/
+		
+		coinx = 440;
+		coiny = 245;
+		circlea = -4;
+		circleb = 0;
+
+		document.getElementById('blue1').style.width = '0px';
+		document.getElementById('blue1').style.height = '0px';
+		document.getElementById('blue1').style.left = '0px';
+		document.getElementById('blue1').style.bottom = '0px';
+	
+		document.getElementById('blue2').style.width = '0px';
+		document.getElementById('blue2').style.height = '0px';
+		document.getElementById('blue2').style.left = '0px';
+		document.getElementById('blue2').style.bottom = '0px';
+	
+		document.getElementById('blue3').style.width = '0px';
+		document.getElementById('blue3').style.height = '0px';
+		document.getElementById('blue3').style.left = '0px';
+		document.getElementById('blue3').style.bottom = '0px';
+	
+		document.getElementById('blue4').style.width = '0px';
+		document.getElementById('blue4').style.height = '0px';
+		document.getElementById('blue4').style.left = '0px';
+		document.getElementById('blue4').style.bottom = '0px';
+	
+		document.getElementById('blue5').style.width = '0px';
+		document.getElementById('blue5').style.height = '0px';
+		document.getElementById('blue5').style.left = '0px';
+		document.getElementById('blue5').style.bottom = '0px';
+	
+		document.getElementById('blue6').style.width = '0px';
+		document.getElementById('blue6').style.height = '0px';
+		document.getElementById('blue6').style.left = '0px';
+		document.getElementById('blue6').style.bottom = '0px';
+	
+	
+		document.getElementById('white1').style.width = '720px';
+		document.getElementById('white1').style.height = '375px';
+		document.getElementById('white1').style.left = '85px';
+		document.getElementById('white1').style.bottom = '65px';
+
+
+		walls = [
+			[0, 0, 165, 340],
+			[0, 85, 165, 165],
+			[0, 85, 340, 340],
+			[890, 890, 165, 340],
+			[805, 890, 165, 165],
+			[805, 890, 340, 340],
+			[85, 85, 340, 440],
+			[85, 85, 65, 165],
+			[805, 805, 340, 440],
+			[805, 805, 65, 165],
+			[85, 805, 440, 440],
+			[85, 805, 65, 65],
+			[220, 220, 65, 385],
+			[520, 520, 65, 385],
+			[370, 370, 120, 440],
+			[670, 670, 120, 440],
+		];
+		
+		toggle = [
+			false,
+			true
+		]
+	
+		badguypos[0][0] = 140;
+		badguypos[0][1] = 350;
+		badguypos[1][0] = 140;
+		badguypos[1][1] = 250;
+		badguypos[2][0] = 140;
+		badguypos[2][1] = 150;
+		badguypos[3][0] = 730;
+		badguypos[3][1] = 400;
+		badguypos[4][0] = 730;
+		badguypos[4][1] = 300;
+		badguypos[5][0] = 730;
+		badguypos[5][1] = 200;
+		badguypos[6][0] = 730;
+		badguypos[6][1] = 100;
+		badguypos[7][0] = -1000;
+		badguypos[7][1] = -1000;
+		badguypos[8][0] = -1000;
+		badguypos[8][1] = -1000;
+		badguypos[9][0] = -1000;
+		badguypos[9][1] = -1000;
+		badguypos[10][0] = -1000;
+		badguypos[10][1] = -1000;
+		badguypos[11][0] = -1000;
+		badguypos[11][1] = -1000;
+	
+		badguymove = function(){
+			if(badguypos[0][0] > 730){
+				toggle[0] = true; toggle[1] = false
+			}
+			if(badguypos[0][0] < 140){toggle[0] = false; toggle[1] = true}
+
+			if(toggle[0] == false){
+			badguypos[0][0] = 	badguypos[0][0]+3.5;
+			badguypos[1][0] = 	badguypos[1][0]+3.5;
+			badguypos[2][0] = 	badguypos[2][0]+3.5;
+
+			}else{
+			badguypos[0][0] = 	badguypos[0][0]-3.5;
+			badguypos[1][0] = 	badguypos[1][0]-3.5;
+			badguypos[2][0] = 	badguypos[2][0]-3.5;
+			}
+
+			if(toggle[1] == false){
+			badguypos[3][0] = 	badguypos[3][0]+3.5;
+			badguypos[4][0] = 	badguypos[4][0]+3.5;
+			badguypos[5][0] = 	badguypos[5][0]+3.5;
+			badguypos[6][0] = 	badguypos[6][0]+3.5;
+
+
+			}else{
+			badguypos[3][0] = 	badguypos[3][0]-3.5;
+			badguypos[4][0] = 	badguypos[4][0]-3.5;
+			badguypos[5][0] = 	badguypos[5][0]-3.5;
+			badguypos[6][0] = 	badguypos[6][0]-3.5;
+
+			}
+		}
+	}
+
+
+	function lvl7(){				/***/ // LEVEL SEVEN // /***/
+		
+		coinx = 607;
+		coiny = 85;
+		circlea = -4;
+		circleb = 0;
+
+		document.getElementById('blue1').style.width = '480px';
+		document.getElementById('blue1').style.height = '80px';
+		document.getElementById('blue1').style.left = '85px';
+		document.getElementById('blue1').style.bottom = '55px';
+	
+		document.getElementById('blue2').style.width = '160px';
+		document.getElementById('blue2').style.height = '80px';
+		document.getElementById('blue2').style.left = '680px';
+		document.getElementById('blue2').style.bottom = '55px';
+	
+		document.getElementById('blue3').style.width = '140px';
+		document.getElementById('blue3').style.height = '100px';
+		document.getElementById('blue3').style.left = '85px';
+		document.getElementById('blue3').style.bottom = '380px';
+	
+		document.getElementById('blue4').style.width = '500px';
+		document.getElementById('blue4').style.height = '100px';
+		document.getElementById('blue4').style.left = '340px';
+		document.getElementById('blue4').style.bottom = '380px';
+	
+		document.getElementById('blue5').style.width = '0px';
+		document.getElementById('blue5').style.height = '0px';
+		document.getElementById('blue5').style.left = '0px';
+		document.getElementById('blue5').style.bottom = '0px';
+	
+		document.getElementById('blue6').style.width = '0px';
+		document.getElementById('blue6').style.height = '0px';
+		document.getElementById('blue6').style.left = '0px';
+		document.getElementById('blue6').style.bottom = '0px';
+	
+	
+		document.getElementById('white1').style.width = '720px';
+		document.getElementById('white1').style.height = '385px';
+		document.getElementById('white1').style.left = '85px';
+		document.getElementById('white1').style.bottom = '65px';
+
+
+		walls = [
+			[0, 0, 165, 340],
+			[0, 85, 165, 165],
+			[0, 85, 340, 340],
+			[890, 890, 165, 340],
+			[805, 890, 165, 165],
+			[805, 890, 340, 340],
+			[85, 85, 340, 375],
+			[85, 85, 130, 165],
+			[805, 805, 340, 375],
+			[805, 805, 130, 165],
+			[700, 805, 375, 375],
+			[670, 805, 130, 130],
+			[85, 220, 375, 375],
+			[85, 190, 130, 130],
+			[340, 720, 375, 375],
+			[180, 550, 130, 130],
+			[230, 330 , 450, 450],
+			[560, 660 , 55, 55],
+			[220, 220 , 375, 450],
+			[330, 330 , 375, 450],
+			[560, 560 , 55, 130],
+			[670, 670 , 55, 130],
+		];
+		
+		toggle = [
+			false,
+			true
+		]
+	
+		badguypos[0][0] = 120;
+		badguypos[0][1] = 335;
+		badguypos[1][0] = 120;
+		badguypos[1][1] = 275;
+		badguypos[2][0] = 120;
+		badguypos[2][1] = 215;
+		badguypos[3][0] = 120;
+		badguypos[3][1] = 155;
+		badguypos[4][0] = 120;
+		badguypos[4][1] = 150;
+		badguypos[5][0] = 210;
+		badguypos[5][1] = 335;
+		badguypos[6][0] = 300;
+		badguypos[6][1] = 150;
+		badguypos[7][0] = 390;
+		badguypos[7][1] = 335;
+		badguypos[8][0] = 480;
+		badguypos[8][1] = 150;
+		badguypos[9][0] = 570;
+		badguypos[9][1] = 335;
+		badguypos[10][0] = 660;
+		badguypos[10][1] = 150;
+		badguypos[11][0] = 750;
+		badguypos[11][1] = 335;
+	
+	
+		badguymove = function(){
+	
+			if(toggle[0] == true){
+				badguypos[0][0] = badguypos[0][0] - 2;
+				badguypos[1][0] = badguypos[1][0] - 2;
+				badguypos[2][0] = badguypos[2][0] - 2;
+				badguypos[3][0] = badguypos[3][0] - 2;
+			}
+			else {
+				badguypos[0][0] = badguypos[0][0] + 2;
+				badguypos[1][0] = badguypos[1][0] + 2;
+				badguypos[2][0] = badguypos[2][0] + 2;
+				badguypos[3][0] = badguypos[3][0] + 2;
+			}
+			if(badguypos[0][0]>760){
+				toggle[0] = true
+			}
+			if(badguypos[0][0]<120){
+				toggle[0] = false
+			}
+
+			if(toggle[1] == true){
+				badguypos[4][1] = badguypos[4][1]+2;
+				badguypos[5][1] = badguypos[5][1]-2;
+				badguypos[6][1] = badguypos[6][1]+2;
+				badguypos[7][1] = badguypos[7][1]-2;
+				badguypos[8][1] = badguypos[8][1]+2;
+				badguypos[9][1] = badguypos[9][1]-2;
+				badguypos[10][1] = badguypos[10][1]+2;
+				badguypos[11][1] = badguypos[11][1]-2;
+			}
+			else{
+				badguypos[4][1] = badguypos[4][1]-2;
+				badguypos[5][1] = badguypos[5][1]+2;
+				badguypos[6][1] = badguypos[6][1]-2;
+				badguypos[7][1] = badguypos[7][1]+2;
+				badguypos[8][1] = badguypos[8][1]-2;
+				badguypos[9][1] = badguypos[9][1]+2;
+				badguypos[10][1] = badguypos[10][1]-2;
+				badguypos[11][1] = badguypos[11][1]+2;
+			}
+			
+			if(badguypos[4][1] < 150){
+				toggle[1]=true
+			}
+			if(badguypos[4][1] > 335){
+				toggle[1]=false
+			}
+
+		}
+	}
+
+
+	function lvl8(){				/***/ // LEVEL EIGHT // /***/
+		
+		coinx = 266;
+		coiny = 405;
+		circlea = 6;
+		circleb = 0;
+	
+
+		document.getElementById('blue1').style.width = '160px';
+		document.getElementById('blue1').style.height = '100px';
+		document.getElementById('blue1').style.left = '85px';
+		document.getElementById('blue1').style.bottom = '400px';
+	
+		document.getElementById('blue2').style.width = '550px';
+		document.getElementById('blue2').style.height = '110px';
+		document.getElementById('blue2').style.left = '300px';
+		document.getElementById('blue2').style.bottom = '400px';
+	
+		document.getElementById('blue3').style.width = '190px';
+		document.getElementById('blue3').style.height = '80px';
+		document.getElementById('blue3').style.left = '460px';
+		document.getElementById('blue3').style.bottom = '-30px';
+	
+		document.getElementById('blue4').style.width = '50px';
+		document.getElementById('blue4').style.height = '400px';
+		document.getElementById('blue4').style.left = '700px';
+		document.getElementById('blue4').style.bottom = '-50px';
+	
+		document.getElementById('blue5').style.width = '120px';
+		document.getElementById('blue5').style.height = '220px';
+		document.getElementById('blue5').style.left = '700px';
+		document.getElementById('blue5').style.bottom = '-50px';
+	
+		document.getElementById('blue6').style.width = '400px';
+		document.getElementById('blue6').style.height = '100px';
+		document.getElementById('blue6').style.left = '0px';
+		document.getElementById('blue6').style.bottom = '-50px';
+	
+		document.getElementById('blue7').style.width = '110px';
+		document.getElementById('blue7').style.height = '250px';
+		document.getElementById('blue7').style.left = '140px';
+		document.getElementById('blue7').style.bottom = '100px';
+	
+		document.getElementById('blue8').style.width = '150px';
+		document.getElementById('blue8').style.height = '170px';
+		document.getElementById('blue8').style.left = '0px';
+		document.getElementById('blue8').style.bottom = '0px';
+	
+		document.getElementById('blue9').style.width = '30px';
+		document.getElementById('blue9').style.height = '250px';
+		document.getElementById('blue9').style.left = '300px';
+		document.getElementById('blue9').style.bottom = '100px';
+	
+		document.getElementById('blue10').style.width = '100px';
+		document.getElementById('blue10').style.height = '50px';
+		document.getElementById('blue10').style.left = '300px';
+		document.getElementById('blue10').style.bottom = '100px';
+	
+		document.getElementById('blue11').style.width = '100px';
+		document.getElementById('blue11').style.height = '50px';
+		document.getElementById('blue11').style.left = '300px';
+		document.getElementById('blue11').style.bottom = '300px';
+	
+		document.getElementById('blue12').style.width = '100px';
+		document.getElementById('blue12').style.height = '50px';
+		document.getElementById('blue12').style.left = '300px';
+		document.getElementById('blue12').style.bottom = '200px';
+		
+		
+		document.getElementById('white1').style.width = '710px';
+		document.getElementById('white1').style.height = '465px';
+		document.getElementById('white1').style.left = '95px';
+		document.getElementById('white1').style.bottom = '-15px';
+
+
+		walls = [
+		//walls are 55 wide
+			[0, 0, 165, 340],
+			[0, 140, 165, 165],
+			[0, 85, 340, 340],
+			[890, 890, 165, 340],
+			[750, 890, 165, 165],
+			[805, 890, 340, 340],
+			[140, 140, 165, 340],
+			[750, 750, 165, 340],
+			[85, 85, 340, 395],
+			[805, 805, 340, 395],
+			[300, 805, 395, 395],
+			[85, 245, 395, 395],
+			[140, 245, 340, 340],
+			[245, 300, 450, 450],
+			[245, 245, 400, 450],
+			[300, 300, 400, 450],
+			[245, 245, 100, 340],
+			[300, 300, 100, 340],
+			[150, 245, 100, 100],
+			[150, 150, 45, 100],
+			[150, 400, 45, 45],
+			[400, 400, -20, 45],
+			[455, 455, -20, 45],
+			[400, 455, -20, -20],
+			[455, 645, 45, 45],
+			[645, 645, -20, 45],
+			[700, 700, -20, 340],
+			[645, 700, -20, -20],
+			[455, 645, 100, 140],
+			[455, 645, 300, 340],
+			[455, 645, 190, 250],
+			[300, 400, 340, 340],
+			[300, 400, 100, 100],
+			[330, 400, 140, 140],
+			[330, 400, 190, 190],
+			[330, 400, 250, 250],
+			[330, 400, 300, 300],
+			[330, 330, 250, 300],
+			[330, 330, 150, 190],
+			[400, 400, 200, 250],
+			[400, 400, 100, 140],
+			[400, 400, 310, 340],
+			[700, 750, 340, 340],
+
+
+		];
+		
+		toggle = [
+			false,
+			false,
+			false,
+			false,
+			false,
+			false
+		]
+	
+		badguypos[0][0] = 310;
+		badguypos[0][1] = 360;
+		badguypos[1][0] = 460;
+		badguypos[1][1] = 158;
+		badguypos[2][0] = 665;
+		badguypos[2][1] = 320;
+		badguypos[3][0] = 570;
+		badguypos[3][1] = 268;
+		badguypos[4][0] = -1000;
+		badguypos[4][1] = 158;
+		badguypos[5][0] = 770;
+		badguypos[5][1] = 360;
+		badguypos[6][0] = 663;
+		badguypos[6][1] = 65;
+		badguypos[7][0] = 665;
+		badguypos[7][1] = 65;
+		badguypos[8][0] = -1000;
+		badguypos[8][1] = 65;
+		badguypos[9][0] = 265;
+		badguypos[9][1] = 68;
+		badguypos[10][0] = 420;
+		badguypos[10][1] = 110;
+		badguypos[11][0] = -1000;
+		badguypos[11][1] = -1000;
+	
+	
+		badguymove = function(){
+		
+			if(toggle[0] == false){
+				badguypos[3][0] = badguypos[3][0] + 2;
+				badguypos[4][0] = badguypos[4][0] + 2;
+			} else
+			{
+				badguypos[3][0] = badguypos[3][0] - 2;
+				badguypos[4][0] = badguypos[4][0] - 2;
+			}
+			if(toggle[1] == false){
+				badguypos[5][0] = badguypos[5][0] + 2;
+				badguypos[6][0] = badguypos[6][0] + 2.2;
+			} else
+			{
+				badguypos[5][0] = badguypos[5][0] - 2;
+				badguypos[6][0] = badguypos[6][0] - 2.2;
+			}
+			if(toggle[2] == false){
+				badguypos[7][1] = badguypos[7][1] + 1.8;
+				badguypos[8][1] = badguypos[8][1] + 1.8;
+			} else
+			{
+				badguypos[7][1] = badguypos[7][1] - 1.8;
+				badguypos[8][1] = badguypos[8][1] - 1.8;
+			}
+			if(toggle[3] == false){
+			badguypos[9][1] = badguypos[9][1] + 2;
+			}else
+			{
+				badguypos[9][1] = badguypos[9][1] - 2;
+			}
+
+				if(badguypos[3][0]>670){toggle[0] = true}
+				if(badguypos[3][0]<350){toggle[0] = false}
+				if(badguypos[5][0]>775){toggle[1] = true}
+				if(badguypos[5][0]<320){toggle[1] = false}
+				if(badguypos[7][1]>320){toggle[2] = true}
+				if(badguypos[7][1]<-2){toggle[2] = false}
+				if(badguypos[9][1]<65){toggle[3] = false}
+				if(badguypos[9][1]>420){toggle[3] = true}
+		}
+	}
+	
+	function lvl9(){				/***/ // LEVEL NINE // /***/
+		
+		coinx = 440;
+		coiny = 110;	
+
+		document.getElementById('blue1').style.width = '0px';
+		document.getElementById('blue1').style.height = '0px';
+		document.getElementById('blue1').style.left = '0px';
+		document.getElementById('blue1').style.bottom = '0px';
+	
+		document.getElementById('blue2').style.width = '0px';
+		document.getElementById('blue2').style.height = '0px';
+		document.getElementById('blue2').style.left = '0px';
+		document.getElementById('blue2').style.bottom = '0px';
+	
+		document.getElementById('blue3').style.width = '0px';
+		document.getElementById('blue3').style.height = '0px';
+		document.getElementById('blue3').style.left = '0px';
+		document.getElementById('blue3').style.bottom = '0px';
+	
+		document.getElementById('blue4').style.width = '0px';
+		document.getElementById('blue4').style.height = '0px';
+		document.getElementById('blue4').style.left = '0px';
+		document.getElementById('blue4').style.bottom = '0px';
+	
+		document.getElementById('blue5').style.width = '0px';
+		document.getElementById('blue5').style.height = '0px';
+		document.getElementById('blue5').style.left = '0px';
+		document.getElementById('blue5').style.bottom = '0px';
+	
+		document.getElementById('blue6').style.width = '0px';
+		document.getElementById('blue6').style.height = '0px';
+		document.getElementById('blue6').style.left = '0px';
+		document.getElementById('blue6').style.bottom = '0px';
+	
+		document.getElementById('blue7').style.width = '0px';
+		document.getElementById('blue7').style.height = '0px';
+		document.getElementById('blue7').style.left = '0px';
+		document.getElementById('blue7').style.bottom = '0px';
+	
+		document.getElementById('blue8').style.width = '0px';
+		document.getElementById('blue8').style.height = '0px';
+		document.getElementById('blue8').style.left = '0px';
+		document.getElementById('blue8').style.bottom = '0px';
+	
+		document.getElementById('blue9').style.width = '0px';
+		document.getElementById('blue9').style.height = '0px';
+		document.getElementById('blue9').style.left = '0px';
+		document.getElementById('blue9').style.bottom = '0px';
+	
+		document.getElementById('blue10').style.width = '0px';
+		document.getElementById('blue10').style.height = '0px';
+		document.getElementById('blue10').style.left = '0px';
+		document.getElementById('blue10').style.bottom = '0px';
+	
+		document.getElementById('blue11').style.width = '0px';
+		document.getElementById('blue11').style.height = '0px';
+		document.getElementById('blue11').style.left = '0px';
+		document.getElementById('blue11').style.bottom = '0px';
+	
+		document.getElementById('blue12').style.width = '0px';
+		document.getElementById('blue12').style.height = '0px';
+		document.getElementById('blue12').style.left = '0px';
+		document.getElementById('blue12').style.bottom = '0px';
+		
+		
+		document.getElementById('white1').style.width = '720px';
+		document.getElementById('white1').style.height = '440px';
+		document.getElementById('white1').style.left = '85px';
+		document.getElementById('white1').style.bottom = '40px';
+
+
+		walls = [
+		//walls are 55 wide
+			[0, 0, 165, 340],
+			[0, 85, 165, 165],
+			[0, 85, 340, 340],
+			[890, 890, 165, 340],
+			[805, 890, 165, 165],
+			[805, 890, 340, 340],
+			[245, 645, 200, 295],
+			[85, 85, 35, 165],
+			[85, 805, 35, 35],
+			[85, 85, 340, 470],
+			[85, 805, 470, 470],
+			[805, 805, 340, 470],
+			[805, 805, 35, 165],
+
+
+		];
+		
+		toggle = [
+			false,
+			false,
+			false,
+			false,
+			false,
+			false
+		]
+	
+		badguypos[0][0] = 315;
+		badguypos[0][1] = 160;
+		badguypos[1][0] = 365;
+		badguypos[1][1] = 110;
+		badguypos[2][0] = 415;
+		badguypos[2][1] = 60;
+		badguypos[3][0] = 465;
+		badguypos[3][1] = 160;
+		badguypos[4][0] = 515;
+		badguypos[4][1] = 110;
+		badguypos[5][0] = 565;
+		badguypos[5][1] = 60;
+		badguypos[6][0] = 315;
+		badguypos[6][1] = 350;
+		badguypos[7][0] = 365;
+		badguypos[7][1] = 400;
+		badguypos[8][0] = 415;
+		badguypos[8][1] = 450;
+		badguypos[9][0] = 465;
+		badguypos[9][1] = 350;
+		badguypos[10][0] = 515;
+		badguypos[10][1] = 400;
+		badguypos[11][0] = 565;
+		badguypos[11][1] = 450;
+	
+	
+		badguymove = function(){
+			badguypos[0][1] = badguypos[0][1] - 1;
+			badguypos[1][1] = badguypos[1][1] - 1;
+			badguypos[2][1] = badguypos[2][1] - 1;
+			badguypos[3][1] = badguypos[3][1] - 1;
+			badguypos[4][1] = badguypos[4][1] - 1;
+			badguypos[5][1] = badguypos[5][1] - 1;
+			badguypos[6][1] = badguypos[6][1] - 1.1;
+			badguypos[7][1] = badguypos[7][1] - 1.1;
+			badguypos[8][1] = badguypos[8][1] - 1.1;
+			badguypos[9][1] = badguypos[9][1] - 1.1;
+			badguypos[10][1] = badguypos[10][1] - 1.1;
+			badguypos[11][1] = badguypos[11][1] - 1.1;
+		
+		
+			if(badguypos[9][1] < 300){
+				badguypos[9][1] = 450;
+				}
+			if(badguypos[9][1] < 300){
+				badguypos[9][1] = 450;
+				}
+			if(badguypos[10][1] < 300){
+				badguypos[10][1] = 450;
+				}
+			if(badguypos[11][1] < 300){
+				badguypos[11][1] = 450;
+				}
+			if(badguypos[8][1] < 300){
+				badguypos[8][1] = 450;
+				}
+		if(badguypos[7][1] < 300){
+				badguypos[7][1] = 450;
+				}
+			if(badguypos[6][1] < 300){
+				badguypos[6][1] = 450;
+				}
+		
+			if(badguypos[0][1] < 60){
+				badguypos[0][1] = 210;
+			}
+			if(badguypos[1][1] < 60){
+				badguypos[1][1] = 210;
+			}
+			if(badguypos[2][1] < 60){
+				badguypos[2][1] = 210;
+			}
+			if(badguypos[3][1] < 60){
+				badguypos[3][1] = 210;
+			}
+			if(badguypos[4][1] < 60){
+				badguypos[4][1] = 210;
+			}
+			if(badguypos[5][1] < 60){
+				badguypos[5][1] = 210;
+			}
+	
+		}
+	}
+	
+		function lvl10(){				/***/ // LEVEL TEN // /***/
+	 
+		coinx = 445;
+		coiny = 247;	
+
+		document.getElementById('blue1').style.width = '0px';
+		document.getElementById('blue1').style.height = '0px';
+		document.getElementById('blue1').style.left = '0px';
+		document.getElementById('blue1').style.bottom = '0px';
+	
+		document.getElementById('blue2').style.width = '0px';
+		document.getElementById('blue2').style.height = '0px';
+		document.getElementById('blue2').style.left = '0px';
+		document.getElementById('blue2').style.bottom = '0px';
+	
+		document.getElementById('blue3').style.width = '0px';
+		document.getElementById('blue3').style.height = '0px';
+		document.getElementById('blue3').style.left = '0px';
+		document.getElementById('blue3').style.bottom = '0px';
+	
+		document.getElementById('blue4').style.width = '0px';
+		document.getElementById('blue4').style.height = '0px';
+		document.getElementById('blue4').style.left = '0px';
+		document.getElementById('blue4').style.bottom = '0px';
+	
+		document.getElementById('blue5').style.width = '0px';
+		document.getElementById('blue5').style.height = '0px';
+		document.getElementById('blue5').style.left = '0px';
+		document.getElementById('blue5').style.bottom = '0px';
+	
+		document.getElementById('blue6').style.width = '0px';
+		document.getElementById('blue6').style.height = '0px';
+		document.getElementById('blue6').style.left = '0px';
+		document.getElementById('blue6').style.bottom = '0px';
+	
+		document.getElementById('blue7').style.width = '0px';
+		document.getElementById('blue7').style.height = '0px';
+		document.getElementById('blue7').style.left = '0px';
+		document.getElementById('blue7').style.bottom = '0px';
+	
+		document.getElementById('blue8').style.width = '0px';
+		document.getElementById('blue8').style.height = '0px';
+		document.getElementById('blue8').style.left = '0px';
+		document.getElementById('blue8').style.bottom = '0px';
+	
+		document.getElementById('blue9').style.width = '0px';
+		document.getElementById('blue9').style.height = '0px';
+		document.getElementById('blue9').style.left = '0px';
+		document.getElementById('blue9').style.bottom = '0px';
+	
+		document.getElementById('blue10').style.width = '0px';
+		document.getElementById('blue10').style.height = '0px';
+		document.getElementById('blue10').style.left = '0px';
+		document.getElementById('blue10').style.bottom = '0px';
+	
+		document.getElementById('blue11').style.width = '0px';
+		document.getElementById('blue11').style.height = '0px';
+		document.getElementById('blue11').style.left = '0px';
+		document.getElementById('blue11').style.bottom = '0px';
+	
+		document.getElementById('blue12').style.width = '0px';
+		document.getElementById('blue12').style.height = '0px';
+		document.getElementById('blue12').style.left = '0px';
+		document.getElementById('blue12').style.bottom = '0px';
+		
+		
+		document.getElementById('white1').style.width = '720px';
+		document.getElementById('white1').style.height = '440px';
+		document.getElementById('white1').style.left = '85px';
+		document.getElementById('white1').style.bottom = '40px';
+
+
+		walls = [
+		//walls are 55 wide
+			[0, 0, 165, 340],
+			[0, 85, 165, 165],
+			[0, 85, 340, 340],
+			[890, 890, 165, 340],
+			[805, 890, 165, 165],
+			[805, 890, 340, 340],
+			[85, 85, 35, 165],
+			[85, 805, 35, 35],
+			[85, 85, 340, 470],
+			[85, 805, 470, 470],
+			[805, 805, 340, 470],
+			[805, 805, 35, 165],
+			[430, 430, 35, 170],
+			[360, 360, 240, 335],
+			[470, 470, 335, 470],
+			[540, 540, 170, 275],
+			[360, 470, 335, 335],
+			[430, 540, 170, 170]
+
+
+		];
+		
+		toggle = [
+			'up',
+			'up',
+			'up',
+			'right',
+			'right',
+			'right',
+			'down', 
+			'down',
+			'down',
+			'left',
+			'left',
+			'left',
+			'left'
+		]
+	
+		badguypos[0][0] = 385;
+		badguypos[0][1] = 248;
+		badguypos[1][0] = 385;
+		badguypos[1][1] = 213;
+		badguypos[2][0] = 385;
+		badguypos[2][1] = 283;
+		badguypos[3][0] = 445;
+		badguypos[3][1] = 308;
+		badguypos[4][0] = 480;
+		badguypos[4][1] = 308;
+		badguypos[5][0] = 410;
+		badguypos[5][1] = 308;
+		badguypos[6][0] = 505;
+		badguypos[6][1] = 248;
+		badguypos[7][0] = 505;
+		badguypos[7][1] = 213;
+		badguypos[8][0] = 505;
+		badguypos[8][1] = 283;
+		badguypos[9][0] = 458;
+		badguypos[9][1] = 188;
+		badguypos[10][0] = 495;
+		badguypos[10][1] = 188;
+		badguypos[11][0] = -1000;
+		badguypos[11][1] = -1000;
+	
+	
+		badguymove = function(){
+		var z = 0;
+		while(z<2){
+		z++;
+			if(toggle[0] == 'up'){
+				badguypos[0][1] = badguypos[0][1] + 1;
+			}
+			if(toggle[0] == 'right'){
+				badguypos[0][0] = badguypos[0][0] + 1;
+			}
+			if(toggle[0] == 'down'){
+				badguypos[0][1] = badguypos[0][1] - 1;
+			}
+			if(toggle[0] == 'left'){
+				badguypos[0][0] = badguypos[0][0] - 1;
+			}
+			
+			if(toggle[1] == 'up'){
+				badguypos[1][1] = badguypos[1][1] + 1;
+			}
+			if(toggle[1] == 'right'){
+				badguypos[1][0] = badguypos[1][0] + 1;
+			}
+			if(toggle[1] == 'down'){
+				badguypos[1][1] = badguypos[1][1] - 1;
+			}
+			if(toggle[1] == 'left'){
+				badguypos[1][0] = badguypos[1][0] - 1;
+			}
+			
+			if(toggle[2] == 'up'){
+				badguypos[2][1] = badguypos[2][1] + 1;
+			}
+			if(toggle[2] == 'right'){
+				badguypos[2][0] = badguypos[2][0] + 1;
+			}
+			if(toggle[2] == 'down'){
+				badguypos[2][1] = badguypos[2][1] - 1;
+			}
+			if(toggle[2] == 'left'){
+				badguypos[2][0] = badguypos[2][0] - 1;
+			}
+			
+			if(toggle[3] == 'up'){
+				badguypos[3][1] = badguypos[3][1] + 1;
+			}
+			if(toggle[3] == 'right'){
+				badguypos[3][0] = badguypos[3][0] + 1;
+			}
+			if(toggle[3] == 'down'){
+				badguypos[3][1] = badguypos[3][1] - 1;
+			}
+			if(toggle[3] == 'left'){
+				badguypos[3][0] = badguypos[3][0] - 1;
+			}
+			
+			if(toggle[4] == 'up'){
+				badguypos[4][1] = badguypos[4][1] + 1;
+			}
+			if(toggle[4] == 'right'){
+				badguypos[4][0] = badguypos[4][0] + 1;
+			}
+			if(toggle[4] == 'down'){
+				badguypos[4][1] = badguypos[4][1] - 1;
+			}
+			if(toggle[4] == 'left'){
+				badguypos[4][0] = badguypos[4][0] - 1;
+			}
+			
+			if(toggle[5] == 'up'){
+				badguypos[5][1] = badguypos[5][1] + 1;
+			}
+			if(toggle[5] == 'right'){
+				badguypos[5][0] = badguypos[5][0] + 1;
+			}
+			if(toggle[5] == 'down'){
+				badguypos[5][1] = badguypos[5][1] - 1;
+			}
+			if(toggle[5] == 'left'){
+				badguypos[5][0] = badguypos[5][0] - 1;
+			}
+			
+			if(toggle[6] == 'up'){
+				badguypos[6][1] = badguypos[6][1] + 1;
+			}
+			if(toggle[6] == 'right'){
+				badguypos[6][0] = badguypos[6][0] + 1;
+			}
+			if(toggle[6] == 'down'){
+				badguypos[6][1] = badguypos[6][1] - 1;
+			}
+			if(toggle[6] == 'left'){
+				badguypos[6][0] = badguypos[6][0] - 1;
+			}
+			
+			if(toggle[7] == 'up'){
+				badguypos[7][1] = badguypos[7][1] + 1;
+			}
+			if(toggle[7] == 'right'){
+				badguypos[7][0] = badguypos[7][0] + 1;
+			}
+			if(toggle[7] == 'down'){
+				badguypos[7][1] = badguypos[7][1] - 1;
+			}
+			if(toggle[7] == 'left'){
+				badguypos[7][0] = badguypos[7][0] - 1;
+			}
+			
+			if(toggle[8] == 'up'){
+				badguypos[8][1] = badguypos[8][1] + 1;
+			}
+			if(toggle[8] == 'right'){
+				badguypos[8][0] = badguypos[8][0] + 1;
+			}
+			if(toggle[8] == 'down'){
+				badguypos[8][1] = badguypos[8][1] - 1;
+			}
+			if(toggle[8] == 'left'){
+				badguypos[8][0] = badguypos[8][0] - 1;
+			}
+			
+			if(toggle[9] == 'up'){
+				badguypos[9][1] = badguypos[9][1] + 1;
+			}
+			if(toggle[9] == 'right'){
+				badguypos[9][0] = badguypos[9][0] + 1;
+			}
+			if(toggle[9] == 'down'){
+				badguypos[9][1] = badguypos[9][1] - 1;
+			}
+			if(toggle[9] == 'left'){
+				badguypos[9][0] = badguypos[9][0] - 1;
+			}
+			
+			if(toggle[10] == 'up'){
+				badguypos[10][1] = badguypos[10][1] + 1;
+			}
+			if(toggle[10] == 'right'){
+				badguypos[10][0] = badguypos[10][0] + 1;
+			}
+			if(toggle[10] == 'down'){
+				badguypos[10][1] = badguypos[10][1] - 1;
+			}
+			if(toggle[10] == 'left'){
+				badguypos[10][0] = badguypos[10][0] - 1;
+			}
+			
+			for(var i = 0; i < 11; i++){
+				if(badguypos[i][0] <= 385 && toggle[i]=='left'){
+				toggle[i] = 'up';
+				}
+			
+			
+				if(badguypos[i][0] >= 505 && toggle[i]=='right'){
+				toggle[i] = 'down';
+				}
+			
+			
+				if(badguypos[i][1] >= 308 && toggle[i]=='up'){
+				toggle[i] = 'right';
+			
+				}
+			
+				if(badguypos[i][1] <= 188 && toggle[i]=='down'){
+				toggle[i] = 'left';
+			
+				}
+			}
+			}			
+		}
+	}
+	
+	function lvl11(){				/***/ // LEVEL ELEVEN // /***/
+	 
+		coinx = 210;
+		coiny = 345;	
+
+		document.getElementById('blue1').style.width = '60px';
+		document.getElementById('blue1').style.height = '200px';
+		document.getElementById('blue1').style.left = '335px';
+		document.getElementById('blue1').style.bottom = '190px';
+	
+		document.getElementById('blue2').style.width = '190px';
+		document.getElementById('blue2').style.height = '130px';
+		document.getElementById('blue2').style.left = '620px';
+		document.getElementById('blue2').style.bottom = '45px';
+	
+		document.getElementById('blue3').style.width = '60px';
+		document.getElementById('blue3').style.height = '190px';
+		document.getElementById('blue3').style.left = '620px';
+		document.getElementById('blue3').style.bottom = '100px';
+	
+		document.getElementById('blue4').style.width = '60px';
+		document.getElementById('blue4').style.height = '50px';
+		document.getElementById('blue4').style.left = '750px';
+		document.getElementById('blue4').style.bottom = '350px';
+	
+		document.getElementById('blue5').style.width = '0px';
+		document.getElementById('blue5').style.height = '0px';
+		document.getElementById('blue5').style.left = '0px';
+		document.getElementById('blue5').style.bottom = '0px';
+	
+		document.getElementById('blue6').style.width = '0px';
+		document.getElementById('blue6').style.height = '0px';
+		document.getElementById('blue6').style.left = '0px';
+		document.getElementById('blue6').style.bottom = '0px';
+	
+		document.getElementById('blue7').style.width = '0px';
+		document.getElementById('blue7').style.height = '0px';
+		document.getElementById('blue7').style.left = '0px';
+		document.getElementById('blue7').style.bottom = '0px';
+	
+		document.getElementById('blue8').style.width = '0px';
+		document.getElementById('blue8').style.height = '0px';
+		document.getElementById('blue8').style.left = '0px';
+		document.getElementById('blue8').style.bottom = '0px';
+	
+		document.getElementById('blue9').style.width = '0px';
+		document.getElementById('blue9').style.height = '0px';
+		document.getElementById('blue9').style.left = '0px';
+		document.getElementById('blue9').style.bottom = '0px';
+	
+		document.getElementById('blue10').style.width = '0px';
+		document.getElementById('blue10').style.height = '0px';
+		document.getElementById('blue10').style.left = '0px';
+		document.getElementById('blue10').style.bottom = '0px';
+	
+		document.getElementById('blue11').style.width = '0px';
+		document.getElementById('blue11').style.height = '0px';
+		document.getElementById('blue11').style.left = '0px';
+		document.getElementById('blue11').style.bottom = '0px';
+	
+		document.getElementById('blue12').style.width = '0px';
+		document.getElementById('blue12').style.height = '0px';
+		document.getElementById('blue12').style.left = '0px';
+		document.getElementById('blue12').style.bottom = '0px';
+		
+		
+		document.getElementById('white1').style.width = '720px';
+		document.getElementById('white1').style.height = '340px';
+		document.getElementById('white1').style.left = '85px';
+		document.getElementById('white1').style.bottom = '45px';
+
+
+		walls = [
+		//walls are 55 wide
+			[0, 0, 165, 340],
+			[0, 85, 165, 165],
+			[0, 85, 340, 340],
+			[890, 890, 165, 340],
+			[680, 890, 165, 165],
+			[750, 890, 340, 340],
+			[85, 85, 45, 165],
+			[85, 620, 45, 45],
+			[85, 85, 340, 380],
+			[85, 330, 380, 380],
+			[330, 330, 180, 380],
+			[390, 390, 180, 380],
+			[330, 390, 180, 180],
+			[390, 750, 380, 380],
+			[620, 620, 45, 280],
+			[750, 750, 340, 380],
+			[620, 680, 280, 280],
+			[680, 680, 165, 280],
+
+		];
+		
+		toggle = [
+			'right',
+		]
+	
+		badguypos[0][0] = 110;
+		badguypos[0][1] = 145;
+		badguypos[1][0] = 110;
+		badguypos[1][1] = 245;
+		badguypos[2][0] = 110;
+		badguypos[2][1] = 345;
+		badguypos[3][0] = 210;
+		badguypos[3][1] = 145;
+		badguypos[4][0] = 210;
+		badguypos[4][1] = 245;
+		badguypos[5][0] = 510;
+		badguypos[5][1] = 345;
+		badguypos[6][0] = 310;
+		badguypos[6][1] = 145;
+		badguypos[7][0] = 410;
+		badguypos[7][1] = 145;
+		badguypos[8][0] = 410;
+		badguypos[8][1] = 245;
+		badguypos[9][0] = 410;
+		badguypos[9][1] = 345;
+		badguypos[10][0] = 510;
+		badguypos[10][1] = 245;
+		badguypos[11][0] = 510;
+		badguypos[11][1] = 145;
+	
+	
+		badguymove = function(){
+			if(toggle[0] == "up"){
+				for(var i=0; i<12; i++){
+					badguypos[i][1] = badguypos[i][1] + 1;
+				}coiny = coiny + 1;
+			}
+			if(toggle[0] == "down"){
+				for(var i=0; i<12; i++){
+					badguypos[i][1] = badguypos[i][1] - 1;
+				}coiny = coiny - 1;
+			}
+			if(toggle[0] == "left"){
+				for(var i=0; i<12; i++){
+					badguypos[i][0] = badguypos[i][0] - 1;
+				}coinx = coinx - 1;
+			}
+			if(toggle[0] == "right"){
+				for(var i=0; i<12; i++){
+					badguypos[i][0] = badguypos[i][0] + 1;
+				}coinx = coinx + 1;		
+			}
+		
+			if(badguypos[0][0] <= 110 && toggle[0] == 'left'){
+				toggle[0] = 'up'
+			}
+			if(badguypos[0][0] >= 190 && toggle[0] == 'right'){
+				toggle[0] = 'down'
+			}
+			if(badguypos[0][1] >= 145 && toggle[0] == 'up'){
+				toggle[0] = 'right'
+			}
+			if(badguypos[0][1] <= 60 && toggle[0] == 'down'){
+				toggle[0] = 'left'
+			}
+		} 
+	}
+	
+	
+		function lvl12(){				/***/ // LEVEL TWELVE // /***/
+	 
+		coinx = 260;
+		coiny = 350;	
+
+		document.getElementById('blue1').style.width = '140px';
+		document.getElementById('blue1').style.height = '65px';
+		document.getElementById('blue1').style.left = '85px';
+		document.getElementById('blue1').style.bottom = '100px';
+	
+		document.getElementById('blue2').style.width = '140px';
+		document.getElementById('blue2').style.height = '200px';
+		document.getElementById('blue2').style.left = '85px';
+		document.getElementById('blue2').style.bottom = '220px';
+	
+		document.getElementById('blue3').style.width = '170px';
+		document.getElementById('blue3').style.height = '180px';
+		document.getElementById('blue3').style.left = '640px';
+		document.getElementById('blue3').style.bottom = '100px';
+	
+		document.getElementById('blue4').style.width = '170px';
+		document.getElementById('blue4').style.height = '65px';
+		document.getElementById('blue4').style.left = '640px';
+		document.getElementById('blue4').style.bottom = '340px';
+	
+		document.getElementById('blue5').style.width = '0px';
+		document.getElementById('blue5').style.height = '0px';
+		document.getElementById('blue5').style.left = '0px';
+		document.getElementById('blue5').style.bottom = '0px';
+	
+		document.getElementById('blue6').style.width = '0px';
+		document.getElementById('blue6').style.height = '0px';
+		document.getElementById('blue6').style.left = '0px';
+		document.getElementById('blue6').style.bottom = '0px';
+	
+		document.getElementById('blue7').style.width = '0px';
+		document.getElementById('blue7').style.height = '0px';
+		document.getElementById('blue7').style.left = '0px';
+		document.getElementById('blue7').style.bottom = '0px';
+	
+		document.getElementById('blue8').style.width = '0px';
+		document.getElementById('blue8').style.height = '0px';
+		document.getElementById('blue8').style.left = '0px';
+		document.getElementById('blue8').style.bottom = '0px';
+	
+		document.getElementById('blue9').style.width = '0px';
+		document.getElementById('blue9').style.height = '0px';
+		document.getElementById('blue9').style.left = '0px';
+		document.getElementById('blue9').style.bottom = '0px';
+	
+		document.getElementById('blue10').style.width = '0px';
+		document.getElementById('blue10').style.height = '0px';
+		document.getElementById('blue10').style.left = '0px';
+		document.getElementById('blue10').style.bottom = '0px';
+	
+		document.getElementById('blue11').style.width = '0px';
+		document.getElementById('blue11').style.height = '0px';
+		document.getElementById('blue11').style.left = '0px';
+		document.getElementById('blue11').style.bottom = '0px';
+	
+		document.getElementById('blue12').style.width = '0px';
+		document.getElementById('blue12').style.height = '0px';
+		document.getElementById('blue12').style.left = '0px';
+		document.getElementById('blue12').style.bottom = '0px';
+		
+		
+		document.getElementById('white1').style.width = '710px';
+		document.getElementById('white1').style.height = '300px';
+		document.getElementById('white1').style.left = '95px';
+		document.getElementById('white1').style.bottom = '105px';
+
+
+		walls = [
+		//walls are 55 wide
+			[0, 0, 165, 340],
+			[0, 85, 165, 165],
+			[0, 85, 340, 340],
+			[890, 890, 165, 340],
+			[805, 890, 165, 165],
+			[805, 890, 340, 340],
+			[95, 95, 220, 340],
+			[95, 220, 165, 165],
+			[95, 220, 220, 220],
+			[635, 795, 280, 280],
+			[635, 795, 340, 340],
+			[795, 795, 165, 280],
+			[220, 635, 405, 405],
+			[220, 635, 100, 100],
+			[220, 220, 100, 165],
+			[220, 220, 220, 405],
+			[635, 635, 100, 275],
+			[635, 635, 350, 405],
+		];
+		
+		toggle = [
+			false,
+		]
+	
+		badguypos[0][0] = 240;
+		badguypos[0][1] = 135;
+		badguypos[1][0] = 240;
+		badguypos[1][1] = 210;
+		badguypos[2][0] = 240;
+		badguypos[2][1] = 285;
+		badguypos[3][0] = 240;
+		badguypos[3][1] = 360;
+		badguypos[4][0] = 600;
+		badguypos[4][1] = 174;
+		badguypos[5][0] = 600;
+		badguypos[5][1] = 249;
+		badguypos[6][0] = 600;
+		badguypos[6][1] = 324;
+		badguypos[7][0] = -1000;
+		badguypos[7][1] = -1000;
+		badguypos[8][0] = -1000;
+		badguypos[8][1] = -1000;
+		badguypos[9][0] = -1000;
+		badguypos[9][1] = -1000;
+		badguypos[10][0] = -1000;
+		badguypos[10][1] = -1000;
+		badguypos[11][0] = -1000;
+		badguypos[11][1] = -1000;
+	
+	
+		badguymove = function(){
+			if(toggle[0] == false){
+				badguypos[0][0] = badguypos[0][0]+3;
+				badguypos[1][0] = badguypos[1][0]+3;
+				badguypos[2][0] = badguypos[2][0]+3;
+				badguypos[3][0] = badguypos[3][0]+3;
+
+				badguypos[4][0] = badguypos[4][0]-3;
+				badguypos[5][0] = badguypos[5][0]-3;
+				badguypos[6][0] = badguypos[6][0]-3;
+			}else{
+				badguypos[0][0] = badguypos[0][0]-3;
+				badguypos[1][0] = badguypos[1][0]-3;
+				badguypos[2][0] = badguypos[2][0]-3;
+				badguypos[3][0] = badguypos[3][0]-3;
+
+				badguypos[4][0] = badguypos[4][0]+3;
+				badguypos[5][0] = badguypos[5][0]+3;
+				badguypos[6][0] = badguypos[6][0]+3;
+			}
+			if(badguypos[0][0]<=240){
+				toggle[0]=false;
+			}
+			if(badguypos[0][0]>=600){
+				toggle[0]=true;
+			}
+		} 
+	}
+	
+	
+		function lvl13(){				/***/ // LEVEL THIRTEEN // /***/
+	 
+		coinx = 502;
+		coiny = 285;	
+
+		document.getElementById('blue1').style.width = '300px';
+		document.getElementById('blue1').style.height = '170px';
+		document.getElementById('blue1').style.left = '0px';
+		document.getElementById('blue1').style.bottom = '0px';
+	
+		document.getElementById('blue2').style.width = '250px';
+		document.getElementById('blue2').style.height = '170px';
+		document.getElementById('blue2').style.left = '560px';
+		document.getElementById('blue2').style.bottom = '0px';
+	
+		document.getElementById('blue3').style.width = '300px';
+		document.getElementById('blue3').style.height = '170px';
+		document.getElementById('blue3').style.left = '0px';
+		document.getElementById('blue3').style.bottom = '345px';
+	
+		document.getElementById('blue4').style.width = '300px';
+		document.getElementById('blue4').style.height = '170px';
+		document.getElementById('blue4').style.left = '560px';
+		document.getElementById('blue4').style.bottom = '345px';
+	
+		document.getElementById('blue5').style.width = '0px';
+		document.getElementById('blue5').style.height = '0px';
+		document.getElementById('blue5').style.left = '0px';
+		document.getElementById('blue5').style.bottom = '0px';
+	
+		document.getElementById('blue6').style.width = '0px';
+		document.getElementById('blue6').style.height = '0px';
+		document.getElementById('blue6').style.left = '0px';
+		document.getElementById('blue6').style.bottom = '0px';
+	
+		document.getElementById('blue7').style.width = '0px';
+		document.getElementById('blue7').style.height = '0px';
+		document.getElementById('blue7').style.left = '0px';
+		document.getElementById('blue7').style.bottom = '0px';
+	
+		document.getElementById('blue8').style.width = '0px';
+		document.getElementById('blue8').style.height = '0px';
+		document.getElementById('blue8').style.left = '0px';
+		document.getElementById('blue8').style.bottom = '0px';
+	
+		document.getElementById('blue9').style.width = '0px';
+		document.getElementById('blue9').style.height = '0px';
+		document.getElementById('blue9').style.left = '0px';
+		document.getElementById('blue9').style.bottom = '0px';
+	
+		document.getElementById('blue10').style.width = '0px';
+		document.getElementById('blue10').style.height = '0px';
+		document.getElementById('blue10').style.left = '0px';
+		document.getElementById('blue10').style.bottom = '0px';
+	
+		document.getElementById('blue11').style.width = '0px';
+		document.getElementById('blue11').style.height = '0px';
+		document.getElementById('blue11').style.left = '0px';
+		document.getElementById('blue11').style.bottom = '0px';
+	
+		document.getElementById('blue12').style.width = '0px';
+		document.getElementById('blue12').style.height = '0px';
+		document.getElementById('blue12').style.left = '0px';
+		document.getElementById('blue12').style.bottom = '0px';
+		
+		
+		document.getElementById('white1').style.width = '710px';
+		document.getElementById('white1').style.height = '340px';
+		document.getElementById('white1').style.left = '95px';
+		document.getElementById('white1').style.bottom = '85px';
+
+
+		walls = [
+			[0, 0, 165, 340],
+			[0, 300, 165, 165],
+			[0, 300, 340, 340],
+			[890, 890, 165, 340],
+			[555, 890, 165, 165],
+			[555, 890, 340, 340],
+			[555, 555, 250, 340],
+			[300, 300, 165, 255],
+			[390, 465, 165, 340],
+			[394, 461, 169, 335],
+			[466, 555, 250, 250],
+			[300, 555, 79, 79],
+			[300, 300, 79, 169],
+			[555, 555, 79, 164],
+			
+			[300, 555, 420, 420],
+			[300, 300, 340, 420],
+			[555, 555, 340, 420],
+			
+
+		];
+		
+		toggle = [
+			'up',  
+		]
+	
+		badguypos[0][0] = 320;
+		badguypos[0][1] = 100;
+		badguypos[1][0] = 485;
+		badguypos[1][1] = 360;
+		badguypos[2][0] = -1000;
+		badguypos[2][1] = -1000;
+		badguypos[3][0] = -1000;
+		badguypos[3][1] = -1000;
+		badguypos[4][0] = -1000;
+		badguypos[4][1] = -1000;
+		badguypos[5][0] = -1000;
+		badguypos[5][1] = -1000;
+		badguypos[6][0] = -1000;
+		badguypos[6][1] = -1000;
+		badguypos[7][0] = -1000;
+		badguypos[7][1] = -1000;
+		badguypos[8][0] = -1000;
+		badguypos[8][1] = -1000;
+		badguypos[9][0] = -1000;
+		badguypos[9][1] = -1000;
+		badguypos[10][0] = -1000;
+		badguypos[10][1] = -1000;
+		badguypos[11][0] = -1000;
+		badguypos[11][1] = -1000;
+	
+		var speed = 2.5;
+	
+		badguymove = function(){
+		
+			if(toggle[0] == 'up'){
+				badguypos[0][1] = badguypos[0][1] + (2 * speed);
+				badguypos[1][1] = badguypos[1][1] - (1.60 * speed);
+			}
+			if(toggle[0] == 'right'){
+				badguypos[0][0] = badguypos[0][0] + (2 * speed);
+				badguypos[1][0] = badguypos[1][0] - (1.35 * speed);
+			}
+			if(toggle[0] == 'down'){
+				badguypos[0][1] = badguypos[0][1] - (2 * speed);
+				badguypos[1][1] = badguypos[1][1] + (1.60 * speed);
+			}
+			if(toggle[0] == 'left'){
+				badguypos[0][0] = badguypos[0][0] - (2 * speed);
+				badguypos[1][0] = badguypos[1][0] + (1.35 * speed);
+			}
+			
+			if(badguypos[0][1] >= 388 && toggle[0] == 'up'){
+				toggle[0] = 'right';
+			}
+			if(badguypos[0][0] >= 520 && toggle[0] == 'right'){
+				toggle[0] = 'down';
+			}
+			if(badguypos[0][1] <= 100 && toggle[0] == 'down'){
+				toggle[0] = 'left';
+			}
+			if(badguypos[0][0] <= 320 && toggle[0] == 'left'){
+				toggle[0] = 'up';
+			}
+		} 
+	}
+	
+	
+		function lvl14(){				/***/ // LEVEL FOURTEEN // /***/
+	 
+		coinx = 148;
+		coiny = 247;	
+
+		document.getElementById('blue1').style.width = '0px';
+		document.getElementById('blue1').style.height = '0px';
+		document.getElementById('blue1').style.left = '0px';
+		document.getElementById('blue1').style.bottom = '0px';
+	
+		document.getElementById('blue2').style.width = '0px';
+		document.getElementById('blue2').style.height = '0px';
+		document.getElementById('blue2').style.left = '0px';
+		document.getElementById('blue2').style.bottom = '0px';
+	
+		document.getElementById('blue3').style.width = '0px';
+		document.getElementById('blue3').style.height = '0px';
+		document.getElementById('blue3').style.left = '0px';
+		document.getElementById('blue3').style.bottom = '0px';
+	
+		document.getElementById('blue4').style.width = '0px';
+		document.getElementById('blue4').style.height = '0px';
+		document.getElementById('blue4').style.left = '0px';
+		document.getElementById('blue4').style.bottom = '0px';
+	
+		document.getElementById('blue5').style.width = '0px';
+		document.getElementById('blue5').style.height = '0px';
+		document.getElementById('blue5').style.left = '0px';
+		document.getElementById('blue5').style.bottom = '0px';
+	
+		document.getElementById('blue6').style.width = '0px';
+		document.getElementById('blue6').style.height = '0px';
+		document.getElementById('blue6').style.left = '0px';
+		document.getElementById('blue6').style.bottom = '0px';
+	
+		document.getElementById('blue7').style.width = '0px';
+		document.getElementById('blue7').style.height = '0px';
+		document.getElementById('blue7').style.left = '0px';
+		document.getElementById('blue7').style.bottom = '0px';
+	
+		document.getElementById('blue8').style.width = '0px';
+		document.getElementById('blue8').style.height = '0px';
+		document.getElementById('blue8').style.left = '0px';
+		document.getElementById('blue8').style.bottom = '0px';
+	
+		document.getElementById('blue9').style.width = '0px';
+		document.getElementById('blue9').style.height = '0px';
+		document.getElementById('blue9').style.left = '0px';
+		document.getElementById('blue9').style.bottom = '0px';
+	
+		document.getElementById('blue10').style.width = '0px';
+		document.getElementById('blue10').style.height = '0px';
+		document.getElementById('blue10').style.left = '0px';
+		document.getElementById('blue10').style.bottom = '0px';
+	
+		document.getElementById('blue11').style.width = '0px';
+		document.getElementById('blue11').style.height = '0px';
+		document.getElementById('blue11').style.left = '0px';
+		document.getElementById('blue11').style.bottom = '0px';
+	
+		document.getElementById('blue12').style.width = '0px';
+		document.getElementById('blue12').style.height = '0px';
+		document.getElementById('blue12').style.left = '0px';
+		document.getElementById('blue12').style.bottom = '0px';
+		
+		
+		document.getElementById('white1').style.width = '730px';
+		document.getElementById('white1').style.height = '400px';
+		document.getElementById('white1').style.left = '85px';
+		document.getElementById('white1').style.bottom = '55px';
+
+
+		walls = [
+			[0, 0, 165, 340],
+			[0, 85, 165, 165],
+			[0, 85, 340, 340],
+			[890, 890, 165, 340],
+			[805, 890, 165, 165],
+			[805, 890, 340, 340],
+			[85, 85, 340, 450],
+			[85, 85, 55, 165],
+			[805, 805, 340, 450],
+			[805, 805, 55, 165],
+			[85, 805, 450, 450],
+			[85, 805, 55, 55]
+		];
+		
+		toggle = [
+			'reset', 0
+		];
+	
+		badguypos[0][0] = 100;
+		badguypos[0][1] = 230;
+		badguypos[1][0] = 100;
+		badguypos[1][1] = 263;
+		badguypos[2][0] = 200;
+		badguypos[2][1] = 230;
+		badguypos[3][0] = 200;
+		badguypos[3][1] = 263;
+		badguypos[4][0] = 133;
+		badguypos[4][1] = 196;
+		badguypos[5][0] = 166;
+		badguypos[5][1] = 196;
+		badguypos[6][0] = 133;
+		badguypos[6][1] = 296;
+		badguypos[7][0] = 166;
+		badguypos[7][1] = 296;
+		badguypos[8][0] = 100;
+		badguypos[8][1] = 296;
+		badguypos[9][0] = 100;
+		badguypos[9][1] = 196;
+		badguypos[10][0] = 200;
+		badguypos[10][1] = 296;
+		badguypos[11][0] = 200;
+		badguypos[11][1] = 196;
+	
+	
+		badguymove = function(){
+		if(toggle[0] == 'still'){
+			badguypos[0][0] = badguypos[0][0] + 0;
+			badguypos[1][0] = badguypos[1][0] + 0;
+			badguypos[2][0] = badguypos[2][0] + 0;
+			badguypos[3][0] = badguypos[3][0] + 0;
+			badguypos[4][0] = badguypos[4][0] + 0;
+			badguypos[5][0] = badguypos[5][0] + 0;
+			badguypos[6][0] = badguypos[6][0] + 0;
+			badguypos[7][0] = badguypos[7][0] + 0;
+			badguypos[8][0] = badguypos[8][0] + 0;
+			badguypos[9][0] = badguypos[9][0] + 0;
+			badguypos[10][0] = badguypos[10][0] + 0;
+			badguypos[11][0] = badguypos[11][0] + 0;
+			coinx = coinx + 0;
+		}
+		if(toggle[0] == 'right'){
+			badguypos[0][0] = badguypos[0][0] + 0.5;
+			badguypos[1][0] = badguypos[1][0] + 0.5;
+			badguypos[2][0] = badguypos[2][0] + 0.5;
+			badguypos[3][0] = badguypos[3][0] + 0.5;
+			badguypos[4][0] = badguypos[4][0] + 0.5;
+			badguypos[5][0] = badguypos[5][0] + 0.5;
+			badguypos[6][0] = badguypos[6][0] + 0.5;
+			badguypos[7][0] = badguypos[7][0] + 0.5;
+			badguypos[8][0] = badguypos[8][0] + 0.5;
+			badguypos[9][0] = badguypos[9][0] + 0.5;
+			badguypos[10][0] = badguypos[10][0] + 0.5;
+			badguypos[11][0] = badguypos[11][0] + 0.5;
+			coinx = coinx + 0.5;
+		}
+		if(toggle[0] == 'left'){
+			badguypos[0][0] = badguypos[0][0] - 0.5;
+			badguypos[1][0] = badguypos[1][0] - 0.5;
+			badguypos[2][0] = badguypos[2][0] - 0.5;
+			badguypos[3][0] = badguypos[3][0] - 0.5;
+			badguypos[4][0] = badguypos[4][0] - 0.5;
+			badguypos[5][0] = badguypos[5][0] - 0.5;
+			badguypos[6][0] = badguypos[6][0] - 0.5;
+			badguypos[7][0] = badguypos[7][0] - 0.5;
+			badguypos[8][0] = badguypos[8][0] - 0.5;
+			badguypos[9][0] = badguypos[9][0] - 0.5;
+			badguypos[10][0] = badguypos[10][0] - 0.5;
+			badguypos[11][0] = badguypos[11][0] - 0.5;
+			coinx = coinx - 0.5;
+		}
+		if(toggle[0] == 'down'){
+			badguypos[0][1] = badguypos[0][1] - 0.5;
+			badguypos[1][1] = badguypos[1][1] - 0.5;
+			badguypos[2][1] = badguypos[2][1] - 0.5;
+			badguypos[3][1] = badguypos[3][1] - 0.5;
+			badguypos[4][1] = badguypos[4][1] - 0.5;
+			badguypos[5][1] = badguypos[5][1] - 0.5;
+			badguypos[6][1] = badguypos[6][1] - 0.5;
+			badguypos[7][1] = badguypos[7][1] - 0.5;
+			badguypos[8][1] = badguypos[8][1] - 0.5;
+			badguypos[9][1] = badguypos[9][1] - 0.5;
+			badguypos[10][1] = badguypos[10][1] - 0.5;
+			badguypos[11][1] = badguypos[11][1] - 0.5;
+			coiny = coiny - 0.5;
+		}
+		
+		if(toggle[0] == 'up'){
+			badguypos[0][1] = badguypos[0][1] + 0.5;
+			badguypos[1][1] = badguypos[1][1] + 0.5;
+			badguypos[2][1] = badguypos[2][1] + 0.5;
+			badguypos[3][1] = badguypos[3][1] + 0.5;
+			badguypos[4][1] = badguypos[4][1] + 0.5;
+			badguypos[5][1] = badguypos[5][1] + 0.5;
+			badguypos[6][1] = badguypos[6][1] + 0.5;
+			badguypos[7][1] = badguypos[7][1] + 0.5;
+			badguypos[8][1] = badguypos[8][1] + 0.5;
+			badguypos[9][1] = badguypos[9][1] + 0.5;
+			badguypos[10][1] = badguypos[10][1] + 0.5;
+			badguypos[11][1] = badguypos[11][1] + 0.5;
+			coiny = coiny + 0.5;
+		}
+		if(toggle[0] == 'reset'){
+			badguypos[0][0] = 390;
+			badguypos[0][1] = 350;
+			badguypos[1][0] = 390;
+			badguypos[1][1] = 383;
+			badguypos[2][0] = 490;
+			badguypos[2][1] = 350;
+			badguypos[3][0] = 490;
+			badguypos[3][1] = 383;
+			badguypos[4][0] = 423;
+			badguypos[4][1] = 316;
+			badguypos[5][0] = 456;
+			badguypos[5][1] = 316;
+			badguypos[6][0] = 423;
+			badguypos[6][1] = 416;
+			badguypos[7][0] = 456;
+			badguypos[7][1] = 416;
+			badguypos[8][0] = 390;
+			badguypos[8][1] = 416;
+			badguypos[9][0] = 390;
+			badguypos[9][1] = 316;
+			badguypos[10][0] = 490;
+			badguypos[10][1] = 416;
+			badguypos[11][0] = 490;
+			badguypos[11][1] = 316;
+			
+			coinx = 438;
+			coiny = 367;	
+		}
+		
+		
+		toggle[1] = toggle[1]+0.5;
+		
+		if(toggle[1] == 50){
+			toggle[0] = 'down';
+		}
+		if(toggle[1] == 190){
+			toggle[0] = 'up';
+		}
+		if(toggle[1] == 220){
+			toggle[0] = 'down';
+		}
+		if(toggle[1] == 340){
+			toggle[0] = 'reset';
+			toggle[1] = 0;
+		}
+		
+		}
+	}
+	
+	function lvl15(){				/***/ // LEVEL FIFTEEN // /***/
+		 
+		coinx = 483;
+		coiny = 253;	
+
+		document.getElementById('blue1').style.width = '200px';
+		document.getElementById('blue1').style.height = '70px';
+		document.getElementById('blue1').style.left = '85px';
+		document.getElementById('blue1').style.bottom = '100px';
+	
+		document.getElementById('blue2').style.width = '200px';
+		document.getElementById('blue2').style.height = '70px';
+		document.getElementById('blue2').style.left = '85px';
+		document.getElementById('blue2').style.bottom = '350px';
+	
+		document.getElementById('blue3').style.width = '200px';
+		document.getElementById('blue3').style.height = '70px';
+		document.getElementById('blue3').style.left = '610px';
+		document.getElementById('blue3').style.bottom = '100px';
+	
+		document.getElementById('blue4').style.width = '200px';
+		document.getElementById('blue4').style.height = '70px';
+		document.getElementById('blue4').style.left = '610px';
+		document.getElementById('blue4').style.bottom = '350px';
+	
+		document.getElementById('blue5').style.width = '0px';
+		document.getElementById('blue5').style.height = '0px';
+		document.getElementById('blue5').style.left = '0px';
+		document.getElementById('blue5').style.bottom = '0px';
+	
+		document.getElementById('blue6').style.width = '0px';
+		document.getElementById('blue6').style.height = '0px';
+		document.getElementById('blue6').style.left = '0px';
+		document.getElementById('blue6').style.bottom = '0px';
+	
+		document.getElementById('blue7').style.width = '0px';
+		document.getElementById('blue7').style.height = '0px';
+		document.getElementById('blue7').style.left = '0px';
+		document.getElementById('blue7').style.bottom = '0px';
+	
+		document.getElementById('blue8').style.width = '0px';
+		document.getElementById('blue8').style.height = '0px';
+		document.getElementById('blue8').style.left = '0px';
+		document.getElementById('blue8').style.bottom = '0px';
+	
+		document.getElementById('blue9').style.width = '0px';
+		document.getElementById('blue9').style.height = '0px';
+		document.getElementById('blue9').style.left = '0px';
+		document.getElementById('blue9').style.bottom = '0px';
+	
+		document.getElementById('blue10').style.width = '0px';
+		document.getElementById('blue10').style.height = '0px';
+		document.getElementById('blue10').style.left = '0px';
+		document.getElementById('blue10').style.bottom = '0px';
+	
+		document.getElementById('blue11').style.width = '0px';
+		document.getElementById('blue11').style.height = '0px';
+		document.getElementById('blue11').style.left = '0px';
+		document.getElementById('blue11').style.bottom = '0px';
+	
+		document.getElementById('blue12').style.width = '0px';
+		document.getElementById('blue12').style.height = '0px';
+		document.getElementById('blue12').style.left = '0px';
+		document.getElementById('blue12').style.bottom = '0px';
+		
+		
+		document.getElementById('white1').style.width = '720px';
+		document.getElementById('white1').style.height = '305px';
+		document.getElementById('white1').style.left = '85px';
+		document.getElementById('white1').style.bottom = '100px';
+
+
+		walls = [
+			[0, 0, 165, 340],
+			[0, 285, 165, 165],
+			[0, 285, 340, 340],
+			[890, 890, 165, 340],
+			[605, 890, 165, 165],
+			[605, 890, 340, 340],
+			[285, 285, 340, 405],
+			[285, 285, 100, 165],
+			[605, 605, 340, 405],
+			[605, 605, 100, 165],
+			[285, 605, 405, 405],
+			[285, 605, 100, 100]
+	
+		
+		
+		];
+		
+		toggle = [
+			'right'
+		];
+	
+		badguypos[0][0] = 448;
+		badguypos[0][1] = 253;
+		badguypos[1][0] = 448;
+		badguypos[1][1] = 253;
+		badguypos[2][0] = 310;
+		badguypos[2][1] = 120;
+		badguypos[3][0] = 485;
+		badguypos[3][1] = 290;
+		badguypos[4][0] = -1000;
+		badguypos[4][1] = -1000;
+		badguypos[5][0] = -1000;
+		badguypos[5][1] = -1000;
+		badguypos[6][0] = -1000;
+		badguypos[6][1] = -1000;
+		badguypos[7][0] = -1000;
+		badguypos[7][1] = -1000;
+		badguypos[8][0] = -1000;
+		badguypos[8][1] = -1000;
+		badguypos[9][0] = -1000;
+		badguypos[9][1] = -1000;
+		badguypos[10][0] = -1000;
+		badguypos[10][1] = -1000;
+		badguypos[11][0] = -1000;
+		badguypos[11][1] = -1000;
+	
+	
+		badguymove = function(){
+		if(red.pos.x < 80){
+			badguypos[0][0] = 448;
+			badguypos[0][1] = 253;
+		} else
+		{
+			if(badguypos[0][1] > red.pos.y){
+				badguypos[0][1] = badguypos[0][1] - 1.25;
+			} else {
+				badguypos[0][1] = badguypos[0][1] + 1.25;
+			}
+			if(badguypos[0][0] > red.pos.x){
+				badguypos[0][0] = badguypos[0][0] - 1.25;
+			} else {
+				badguypos[0][0] = badguypos[0][0] + 1.25;
+			}
+		
+		
+		}
+		if(blue.pos.x < 80){
+			badguypos[1][0] = 448;
+			badguypos[1][1] = 253;
+		} else
+		{
+			if(badguypos[1][1] > blue.pos.y){
+				badguypos[1][1] = badguypos[1][1] - 1.25;
+			} else {
+				badguypos[1][1] = badguypos[1][1] + 1.25;
+			}
+			if(badguypos[1][0] > blue.pos.x){
+				badguypos[1][0] = badguypos[1][0] - 1.25;
+			} else {
+				badguypos[1][0] = badguypos[1][0] + 1.25;
+			}
+		
+		
+		}
+		if(toggle[0] == 'up'){
+			badguypos[2][1] = badguypos[2][1] + 2;
+			badguypos[3][1] = badguypos[3][1] - 0.6;
+		}
+		if(toggle[0] == 'down'){
+			badguypos[2][1] = badguypos[2][1] - 2;
+			badguypos[3][1] = badguypos[3][1] + 0.6;
+		}
+		if(toggle[0] == 'right'){
+			badguypos[2][0] = badguypos[2][0] + 2;
+			badguypos[3][0] = badguypos[3][0] - 0.6;
+		}
+		if(toggle[0] == 'left'){
+			badguypos[2][0] = badguypos[2][0] - 2;
+			badguypos[3][0] = badguypos[3][0] + 0.6;
+		}
+		if(badguypos[2][0] > 565 && toggle[0] == 'right'){
+			toggle[0] = 'up'
+		}
+		if(badguypos[2][0] < 310 && toggle[0] == 'left'){
+			toggle[0] = 'down'
+		}
+		if(badguypos[2][1] <= 120 && toggle[0] == 'down'){
+			toggle[0] = 'right'
+		}
+		if(badguypos[2][1] > 370 && toggle[0] == 'up'){
+			toggle[0] = 'left'
+		}
+		}
+	}
+	
+		function lvl16(){				/***/ // LEVEL SIXTEEN // /***/
+	 
+		coinx = 443;
+		coiny = 250;	
+
+		document.getElementById('blue1').style.width = '70px';
+		document.getElementById('blue1').style.height = '65px';
+		document.getElementById('blue1').style.left = '95px';
+		document.getElementById('blue1').style.bottom = '100px';
+	
+		document.getElementById('blue2').style.width = '20px';
+		document.getElementById('blue2').style.height = '60px';
+		document.getElementById('blue2').style.left = '145px';
+		document.getElementById('blue2').style.bottom = '150px';
+	
+		document.getElementById('blue3').style.width = '20px';
+		document.getElementById('blue3').style.height = '100px';
+		document.getElementById('blue3').style.left = '145px';
+		document.getElementById('blue3').style.bottom = '310px';
+	
+		document.getElementById('blue4').style.width = '80px';
+		document.getElementById('blue4').style.height = '60px';
+		document.getElementById('blue4').style.left = '90px';
+		document.getElementById('blue4').style.bottom = '350px';
+	
+		document.getElementById('blue5').style.width = '75px';
+		document.getElementById('blue5').style.height = '65px';
+		document.getElementById('blue5').style.left = '730px';
+		document.getElementById('blue5').style.bottom = '100px';
+	
+		document.getElementById('blue6').style.width = '25px';
+		document.getElementById('blue6').style.height = '110px';
+		document.getElementById('blue6').style.left = '730px';
+		document.getElementById('blue6').style.bottom = '100px';
+	
+		document.getElementById('blue7').style.width = '100px';
+		document.getElementById('blue7').style.height = '60px';
+		document.getElementById('blue7').style.left = '730px';
+		document.getElementById('blue7').style.bottom = '350px';
+	
+		document.getElementById('blue8').style.width = '30px';
+		document.getElementById('blue8').style.height = '100px';
+		document.getElementById('blue8').style.left = '730px';
+		document.getElementById('blue8').style.bottom = '300px';
+	
+		document.getElementById('blue9').style.width = '0px';
+		document.getElementById('blue9').style.height = '0px';
+		document.getElementById('blue9').style.left = '0px';
+		document.getElementById('blue9').style.bottom = '0px';
+	
+		document.getElementById('blue10').style.width = '0px';
+		document.getElementById('blue10').style.height = '0px';
+		document.getElementById('blue10').style.left = '0px';
+		document.getElementById('blue10').style.bottom = '0px';
+	
+		document.getElementById('blue11').style.width = '0px';
+		document.getElementById('blue11').style.height = '0px';
+		document.getElementById('blue11').style.left = '0px';
+		document.getElementById('blue11').style.bottom = '0px';
+	
+		document.getElementById('blue12').style.width = '0px';
+		document.getElementById('blue12').style.height = '0px';
+		document.getElementById('blue12').style.left = '0px';
+		document.getElementById('blue12').style.bottom = '0px';
+		
+		
+		document.getElementById('white1').style.width = '710px';
+		document.getElementById('white1').style.height = '300px';
+		document.getElementById('white1').style.left = '95px';
+		document.getElementById('white1').style.bottom = '110px';
+
+
+		walls = [
+			[0, 0, 165, 340],
+			[0, 135, 165, 165],
+			[0, 135, 340, 340],
+			[890, 890, 165, 340],
+			[755, 890, 165, 165],
+			[755, 890, 340, 340],
+			[135, 135, 300, 340],
+			[135, 135, 165, 205],
+			[755, 755, 300, 340],
+			[755, 755, 165, 205],
+			[135, 165, 300, 300],
+			[135, 165, 205, 205],
+			[725, 755, 300, 300],
+			[725, 755, 205, 205],
+			[725, 725, 300, 400],
+			[725, 725, 105, 205],
+			[165, 165, 300, 400],
+			[165, 165, 105, 205],
+			[165, 725, 400, 400],
+			[165, 725, 105, 105]
+		
+		];
+		
+		toggle = [
+			'right'
+		];
+	
+		badguypos[0][0] = 265;
+		badguypos[0][1] = 125;
+		badguypos[1][0] = 265;
+		badguypos[1][1] = 180;
+		badguypos[2][0] = 265;
+		badguypos[2][1] = 235;
+		badguypos[3][0] = 265;
+		badguypos[3][1] = 290;
+		badguypos[4][0] = 625;
+		badguypos[4][1] = 125;
+		badguypos[5][0] = 625;
+		badguypos[5][1] = 170;
+		badguypos[6][0] = 625;
+		badguypos[6][1] = 215;
+		badguypos[7][0] = 625;
+		badguypos[7][1] = 260;
+		badguypos[8][0] = 625;
+		badguypos[8][1] = 300;
+		badguypos[9][0] = -1000;
+		badguypos[9][1] = -1000;
+		badguypos[10][0] = -1000;
+		badguypos[10][1] = -1000;
+		badguypos[11][0] = -1000;
+		badguypos[11][1] = -1000;
+	
+	
+		badguymove = function(){
+			for(var i = 0; i <= 8; i++){
+				badguypos[i][1] = badguypos[i][1] - 2.8;
+				if(badguypos[i][1] < 125){
+					badguypos[i][1] = 385;
+				}
+			}
+		}
+	}
+	
+
+	
+	function lvl17(){				/***/ // LEVEL SEVENTEEN // /***/
+	 
+		coinx = 443;
+		coiny = 246;	
+
+		document.getElementById('blue1').style.width = '0px';
+		document.getElementById('blue1').style.height = '0px';
+		document.getElementById('blue1').style.left = '0px';
+		document.getElementById('blue1').style.bottom = '0px';
+	
+		document.getElementById('blue2').style.width = '0px';
+		document.getElementById('blue2').style.height = '0px';
+		document.getElementById('blue2').style.left = '0px';
+		document.getElementById('blue2').style.bottom = '0px';
+	
+		document.getElementById('blue3').style.width = '0px';
+		document.getElementById('blue3').style.height = '0px';
+		document.getElementById('blue3').style.left = '0px';
+		document.getElementById('blue3').style.bottom = '0px';
+	
+		document.getElementById('blue4').style.width = '0px';
+		document.getElementById('blue4').style.height = '0px';
+		document.getElementById('blue4').style.left = '0px';
+		document.getElementById('blue4').style.bottom = '0px';
+	
+		document.getElementById('blue5').style.width = '0px';
+		document.getElementById('blue5').style.height = '0px';
+		document.getElementById('blue5').style.left = '0px';
+		document.getElementById('blue5').style.bottom = '0px';
+	
+		document.getElementById('blue6').style.width = '0px';
+		document.getElementById('blue6').style.height = '0px';
+		document.getElementById('blue6').style.left = '0px';
+		document.getElementById('blue6').style.bottom = '0px';
+	
+		document.getElementById('blue7').style.width = '0px';
+		document.getElementById('blue7').style.height = '0px';
+		document.getElementById('blue7').style.left = '0px';
+		document.getElementById('blue7').style.bottom = '0px';
+	
+		document.getElementById('blue8').style.width = '0px';
+		document.getElementById('blue8').style.height = '0px';
+		document.getElementById('blue8').style.left = '0px';
+		document.getElementById('blue8').style.bottom = '0px';
+	
+		document.getElementById('blue9').style.width = '0px';
+		document.getElementById('blue9').style.height = '0px';
+		document.getElementById('blue9').style.left = '0px';
+		document.getElementById('blue9').style.bottom = '0px';
+	
+		document.getElementById('blue10').style.width = '0px';
+		document.getElementById('blue10').style.height = '0px';
+		document.getElementById('blue10').style.left = '0px';
+		document.getElementById('blue10').style.bottom = '0px';
+	
+		document.getElementById('blue11').style.width = '0px';
+		document.getElementById('blue11').style.height = '0px';
+		document.getElementById('blue11').style.left = '0px';
+		document.getElementById('blue11').style.bottom = '0px';
+	
+		document.getElementById('blue12').style.width = '0px';
+		document.getElementById('blue12').style.height = '0px';
+		document.getElementById('blue12').style.left = '0px';
+		document.getElementById('blue12').style.bottom = '0px';
+		
+		
+		document.getElementById('white1').style.width = '720px';
+		document.getElementById('white1').style.height = '180px';
+		document.getElementById('white1').style.left = '85px';
+		document.getElementById('white1').style.bottom = '170px';
+
+
+		walls = [
+			[0, 0, 165, 340],
+			[0, 805, 165, 165],
+			[0, 805, 340, 340],
+			[890, 890, 165, 340],
+			[755, 890, 165, 165],
+			[755, 890, 340, 340],
+			
+		
+		];
+		
+		toggle = [
+			'left'
+		];
+		
+	
+		badguypos[0][0] = 318;
+		badguypos[0][1] = 195;
+		badguypos[1][0] = 368;
+		badguypos[1][1] = 245;
+		badguypos[2][0] = 318;
+		badguypos[2][1] = 295;
+		badguypos[3][0] = 418;
+		badguypos[3][1] = 195;
+		badguypos[4][0] = 268;
+		badguypos[4][1] = 245;
+		badguypos[5][0] = 418;
+		badguypos[5][1] = 295;
+		badguypos[6][0] = 618;
+		badguypos[6][1] = 195;
+		badguypos[7][0] = 468;
+		badguypos[7][1] = 245;
+		badguypos[8][0] = 618;
+		badguypos[8][1] = 295;
+		badguypos[9][0] = 518;
+		badguypos[9][1] = 195;
+		badguypos[10][0] = 568;
+		badguypos[10][1] = 245;
+		badguypos[11][0] = 518;
+		badguypos[11][1] = 295;
+	
+		countera = 0;
+		
+		badguymove = function(){
+			if(countera > 0){
+				badguypos[0][0] = 318;
+				badguypos[0][1] = 195;
+				badguypos[1][0] = 368;
+				badguypos[1][1] = 245;
+				badguypos[2][0] = 318;
+				badguypos[2][1] = 295;
+				badguypos[3][0] = 418;
+				badguypos[3][1] = 195;
+				badguypos[4][0] = 268;
+				badguypos[4][1] = 245;
+				badguypos[5][0] = 418;
+				badguypos[5][1] = 295;
+				badguypos[6][0] = 618;
+				badguypos[6][1] = 195;
+				badguypos[7][0] = 468;
+				badguypos[7][1] = 245;
+				badguypos[8][0] = 618;
+				badguypos[8][1] = 295;
+				badguypos[9][0] = 518;
+				badguypos[9][1] = 195;
+				badguypos[10][0] = 568;
+				badguypos[10][1] = 245;
+				badguypos[11][0] = 518;
+				badguypos[11][1] = 295;
+			}
+			
+			if(countera > 12){
+				badguypos[0][0] = -1000;
+				badguypos[0][1] = -1000;
+				badguypos[1][0] = -1000;
+				badguypos[1][1] = -1000;
+				badguypos[2][0] = -1000;
+				badguypos[2][1] = -1000;
+				badguypos[3][0] = -1000;
+				badguypos[3][1] = -1000;
+				badguypos[4][0] = -1000;
+				badguypos[4][1] = -1000;
+				badguypos[5][0] = -1000;
+				badguypos[5][1] = -1000;
+				badguypos[6][0] = -1000;
+				badguypos[6][1] = -1000;
+				badguypos[7][0] = -1000;
+				badguypos[7][1] = -1000;
+				badguypos[8][0] = -1000;
+				badguypos[8][1] = -1000;
+				badguypos[9][0] = -1000;
+				badguypos[9][1] = -1000;
+				badguypos[10][0] = -1000;
+				badguypos[10][1] = -1000;
+				badguypos[11][0] = -1000;
+				badguypos[11][1] = -1000;
+			}
+			
+			if(countera > 18){
+				badguypos[0][0] = 268;
+				badguypos[0][1] = 195;
+				badguypos[1][0] = 618;
+				badguypos[1][1] = 245;
+				badguypos[2][0] = 268;
+				badguypos[2][1] = 295;
+				badguypos[3][0] = 368;
+				badguypos[3][1] = 195;
+				badguypos[4][0] = 318;
+				badguypos[4][1] = 245;
+				badguypos[5][0] = 368;
+				badguypos[5][1] = 295;
+				badguypos[6][0] = 568;
+				badguypos[6][1] = 195;
+				badguypos[7][0] = 418;
+				badguypos[7][1] = 245;
+				badguypos[8][0] = 568;
+				badguypos[8][1] = 295;
+				badguypos[9][0] = 468;
+				badguypos[9][1] = 195;
+				badguypos[10][0] = 518;
+				badguypos[10][1] = 245;
+				badguypos[11][0] = 468;
+				badguypos[11][1] = 295;
+			}
+			
+			if(countera > 28){
+				badguypos[0][0] = -1000;
+				badguypos[0][1] = -1000;
+				badguypos[1][0] = -1000;
+				badguypos[1][1] = -1000;
+				badguypos[2][0] = -1000;
+				badguypos[2][1] = -1000;
+				badguypos[3][0] = -1000;
+				badguypos[3][1] = -1000;
+				badguypos[4][0] = -1000;
+				badguypos[4][1] = -1000;
+				badguypos[5][0] = -1000;
+				badguypos[5][1] = -1000;
+				badguypos[6][0] = -1000;
+				badguypos[6][1] = -1000;
+				badguypos[7][0] = -1000;
+				badguypos[7][1] = -1000;
+				badguypos[8][0] = -1000;
+				badguypos[8][1] = -1000;
+				badguypos[9][0] = -1000;
+				badguypos[9][1] = -1000;
+				badguypos[10][0] = -1000;
+				badguypos[10][1] = -1000;
+				badguypos[11][0] = -1000;
+				badguypos[11][1] = -1000;
+			}
+			
+			if(countera > 34){
+				countera = 0;
+			}
+		
+			countera = countera + 0.1;
+		}
+	}
+	
+	
+		function lvl18(){				/***/ // LEVEL EIGHTEEN // /***/
+	 
+		coinx = 443;
+		coiny = 246;	
+
+		document.getElementById('blue1').style.width = '0px';
+		document.getElementById('blue1').style.height = '0px';
+		document.getElementById('blue1').style.left = '0px';
+		document.getElementById('blue1').style.bottom = '0px';
+	
+		document.getElementById('blue2').style.width = '0px';
+		document.getElementById('blue2').style.height = '0px';
+		document.getElementById('blue2').style.left = '0px';
+		document.getElementById('blue2').style.bottom = '0px';
+	
+		document.getElementById('blue3').style.width = '0px';
+		document.getElementById('blue3').style.height = '0px';
+		document.getElementById('blue3').style.left = '0px';
+		document.getElementById('blue3').style.bottom = '0px';
+	
+		document.getElementById('blue4').style.width = '0px';
+		document.getElementById('blue4').style.height = '0px';
+		document.getElementById('blue4').style.left = '0px';
+		document.getElementById('blue4').style.bottom = '0px';
+	
+		document.getElementById('blue5').style.width = '0px';
+		document.getElementById('blue5').style.height = '0px';
+		document.getElementById('blue5').style.left = '0px';
+		document.getElementById('blue5').style.bottom = '0px';
+	
+		document.getElementById('blue6').style.width = '0px';
+		document.getElementById('blue6').style.height = '0px';
+		document.getElementById('blue6').style.left = '0px';
+		document.getElementById('blue6').style.bottom = '0px';
+	
+		document.getElementById('blue7').style.width = '0px';
+		document.getElementById('blue7').style.height = '0px';
+		document.getElementById('blue7').style.left = '0px';
+		document.getElementById('blue7').style.bottom = '0px';
+	
+		document.getElementById('blue8').style.width = '0px';
+		document.getElementById('blue8').style.height = '0px';
+		document.getElementById('blue8').style.left = '0px';
+		document.getElementById('blue8').style.bottom = '0px';
+	
+		document.getElementById('blue9').style.width = '0px';
+		document.getElementById('blue9').style.height = '0px';
+		document.getElementById('blue9').style.left = '0px';
+		document.getElementById('blue9').style.bottom = '0px';
+	
+		document.getElementById('blue10').style.width = '0px';
+		document.getElementById('blue10').style.height = '0px';
+		document.getElementById('blue10').style.left = '0px';
+		document.getElementById('blue10').style.bottom = '0px';
+	
+		document.getElementById('blue11').style.width = '0px';
+		document.getElementById('blue11').style.height = '0px';
+		document.getElementById('blue11').style.left = '0px';
+		document.getElementById('blue11').style.bottom = '0px';
+	
+		document.getElementById('blue12').style.width = '0px';
+		document.getElementById('blue12').style.height = '0px';
+		document.getElementById('blue12').style.left = '0px';
+		document.getElementById('blue12').style.bottom = '0px';
+		
+		
+		document.getElementById('white1').style.width = '730px';
+		document.getElementById('white1').style.height = '300px';
+		document.getElementById('white1').style.left = '85px';
+		document.getElementById('white1').style.bottom = '105px';
+
+
+		walls = [
+			[0, 0, 165, 340],
+			[0, 85, 165, 165],
+			[0, 85, 340, 340],
+			[890, 890, 165, 340],
+			[805, 890, 165, 165],
+			[805, 890, 340, 340],
+			[85, 85, 105, 165],
+			[85, 85, 340, 400],
+			[805, 805, 105, 165],
+			[805, 805, 340, 400],
+			[85, 805, 400, 400],
+			[85, 805, 105, 105]		
+		];
+		
+		toggle = [
+			'left', 0.3
+		];
+		
+	
+		badguypos[0][0] = 760;
+		badguypos[0][1] = 360;
+		badguypos[1][0] = 760;
+		badguypos[1][1] = 315;
+		badguypos[2][0] = 760;
+		badguypos[2][1] = 270;
+		badguypos[3][0] = 760;
+		badguypos[3][1] = 225;
+		badguypos[4][0] = 760;
+		badguypos[4][1] = 180;
+		badguypos[5][0] = 760;
+		badguypos[5][1] = 135;
+		badguypos[6][0] = -1000;
+		badguypos[6][1] = -1000;
+		badguypos[7][0] = -1000;
+		badguypos[7][1] = -1000;
+		badguypos[8][0] = -1000;
+		badguypos[8][1] = -1000;
+		badguypos[9][0] = -1000;
+		badguypos[9][1] = -1000;
+		badguypos[10][0] = -1000;
+		badguypos[10][1] = -1000;
+		badguypos[11][0] = -1000;
+		badguypos[11][1] = -1000;
+	
+		countera = 0;
+		
+		badguymove = function(){
+			
+			for(var i=0; i<6; i++){
+				badguypos[i][0] = badguypos[i][0]  - toggle[1];
+			}
+			toggle[1] = toggle[1] + 0.06; 
+			
+			if(badguypos[1][0] < 120){
+				toggle[1] = 0.3;
+				for(var i=0; i<6; i++){
+					badguypos[i][0] = 760;
+				}
+				badguypos[0][1] = 360;
+				badguypos[1][1] = 315;
+				badguypos[2][1] = 270;
+				badguypos[3][1] = 225;
+				badguypos[4][1] = 180;
+				badguypos[5][1] = 135;
+				
+				var random = Math.random() * 4;
+				if(random < 1){badguypos[1][1] = 360;} else
+				if(random < 2){badguypos[2][1] = 360;} else
+				if(random < 3){badguypos[3][1] = 360;} else
+				if(random <= 4){badguypos[4][1] = 360;} 
+			}
+			
+		}
+	}
+	
+		function lvl19(){				/***/ // LEVEL NINETEEN // /***/
+	 
+		coinx = 443;
+		coiny = 246;	
+
+		document.getElementById('blue1').style.width = '0px';
+		document.getElementById('blue1').style.height = '0px';
+		document.getElementById('blue1').style.left = '0px';
+		document.getElementById('blue1').style.bottom = '0px';
+	
+		document.getElementById('blue2').style.width = '0px';
+		document.getElementById('blue2').style.height = '0px';
+		document.getElementById('blue2').style.left = '0px';
+		document.getElementById('blue2').style.bottom = '0px';
+	
+		document.getElementById('blue3').style.width = '0px';
+		document.getElementById('blue3').style.height = '0px';
+		document.getElementById('blue3').style.left = '0px';
+		document.getElementById('blue3').style.bottom = '0px';
+	
+		document.getElementById('blue4').style.width = '0px';
+		document.getElementById('blue4').style.height = '0px';
+		document.getElementById('blue4').style.left = '0px';
+		document.getElementById('blue4').style.bottom = '0px';
+	
+		document.getElementById('blue5').style.width = '0px';
+		document.getElementById('blue5').style.height = '0px';
+		document.getElementById('blue5').style.left = '0px';
+		document.getElementById('blue5').style.bottom = '0px';
+	
+		document.getElementById('blue6').style.width = '0px';
+		document.getElementById('blue6').style.height = '0px';
+		document.getElementById('blue6').style.left = '0px';
+		document.getElementById('blue6').style.bottom = '0px';
+	
+		document.getElementById('blue7').style.width = '0px';
+		document.getElementById('blue7').style.height = '0px';
+		document.getElementById('blue7').style.left = '0px';
+		document.getElementById('blue7').style.bottom = '0px';
+	
+		document.getElementById('blue8').style.width = '0px';
+		document.getElementById('blue8').style.height = '0px';
+		document.getElementById('blue8').style.left = '0px';
+		document.getElementById('blue8').style.bottom = '0px';
+	
+		document.getElementById('blue9').style.width = '0px';
+		document.getElementById('blue9').style.height = '0px';
+		document.getElementById('blue9').style.left = '0px';
+		document.getElementById('blue9').style.bottom = '0px';
+	
+		document.getElementById('blue10').style.width = '0px';
+		document.getElementById('blue10').style.height = '0px';
+		document.getElementById('blue10').style.left = '0px';
+		document.getElementById('blue10').style.bottom = '0px';
+	
+		document.getElementById('blue11').style.width = '100px';
+		document.getElementById('blue11').style.height = '190px';
+		document.getElementById('blue11').style.left = '195px';
+		document.getElementById('blue11').style.bottom = '160px';
+	
+		document.getElementById('blue12').style.width = '100px';
+		document.getElementById('blue12').style.height = '190px';
+		document.getElementById('blue12').style.left = '610px';
+		document.getElementById('blue12').style.bottom = '160px';
+		
+		
+		document.getElementById('white1').style.width = '710px';
+		document.getElementById('white1').style.height = '180px';
+		document.getElementById('white1').style.left = '95px';
+		document.getElementById('white1').style.bottom = '165px';
+
+
+		walls = [
+			[0, 0, 165, 340],
+			[0, 185, 165, 165],
+			[0, 185, 340, 340],
+			[890, 890, 165, 340],
+			[705, 890, 165, 165],
+			[705, 890, 340, 340],
+			[185, 360, 340, 340],
+			[185, 360, 165, 165],
+			[185, 185, 165, 340],
+			[705, 705, 165, 340],
+			[185, 185, 165, 340],
+			[360, 360, 165, 340],
+	
+
+		
+		];
+		
+		toggle = [
+			true, 1
+		];
+		
+	
+		badguypos[0][0] = 290;
+		badguypos[0][1] = 180;
+		badguypos[1][0] = 390;
+		badguypos[1][1] = 310;
+		badguypos[2][0] = 490;
+		badguypos[2][1] = 180;
+		badguypos[3][0] = 590;
+		badguypos[3][1] = 310;
+		badguypos[4][0] = -1000;
+		badguypos[4][1] = -1000;
+		badguypos[5][0] = -1000;
+		badguypos[5][1] = -1000;
+		badguypos[6][0] = -1000;
+		badguypos[6][1] = -1000;
+		badguypos[7][0] = -1000;
+		badguypos[7][1] = -1000;
+		badguypos[8][0] = -1000;
+		badguypos[8][1] = -1000;
+		badguypos[9][0] = -1000;
+		badguypos[9][1] = -1000;
+		badguypos[10][0] = -1000;
+		badguypos[10][1] = -1000;
+		badguypos[11][0] = -1000;
+		badguypos[11][1] = -1000;
+	
+		countera = 0;
+		
+		badguymove = function(){
+		var toRemove = [];
+		for(var i = 0; i < arena.childNodes.length; i++){
+			if (arena.childNodes[i].className === 'wall'){
+				toRemove.push(arena.childNodes[i]);
+			}
+		}
+		
+		for(var i = 0; i < toRemove.length; i++){
+			arena.removeChild(toRemove[i]);
+		}
+		
+		walls[6][0] = walls[6][0] + toggle[1];
+		walls[6][1] = walls[6][1] + toggle[1];
+		walls[7][0] = walls[7][0] + toggle[1];
+		walls[7][1] = walls[7][1] + toggle[1];
+		walls[10][0] = walls[10][0] + toggle[1];
+		walls[10][1] = walls[10][1] + toggle[1];
+		walls[11][0] = walls[11][0] + toggle[1];
+		walls[11][1] = walls[11][1] + toggle[1];
+		
+		
+		document.getElementById('blue11').style.width = (190 - walls[10][1])*-1;
+		document.getElementById('blue12').style.left = walls[11][1]+10;
+		document.getElementById('blue12').style.width = 705 - walls[11][1];
+
+		if(toggle[0] == true){
+			badguypos[0][1] = badguypos[0][1] + 1.5;	
+			badguypos[2][1] = badguypos[2][1] + 1.5;
+			badguypos[1][1] = badguypos[1][1] - 1.5;	
+			badguypos[3][1] = badguypos[3][1] - 1.5;
+		} else {
+			badguypos[0][1] = badguypos[0][1] - 1.5;	
+			badguypos[2][1] = badguypos[2][1] - 1.5;
+			badguypos[1][1] = badguypos[1][1] + 1.5;	
+			badguypos[3][1] = badguypos[3][1] + 1.5;
+		}
+		
+		if(toggle[0] == true && badguypos[0][1] > 310){
+			toggle[0] = false;
+		}
+		if(toggle[0] == false && badguypos[0][1] < 180){
+			toggle[0] = true;
+		}
+		
+		if(walls[6][0] < 135){
+			toggle[1] = 1;
+		}
+		if(walls[6][1] > 755){
+			toggle[1] = -1;
+		}
+		
+		if(walls[6][0] > 200){
+			walls[8] = [185, 185, 165, 340];
+			walls[10][3] =  340;
+		} else {
+			walls[8] = [0, 0, 165, 165]	
+			walls[10][3] = 165;
+		}
+		
+		if(walls[6][1] < 705){
+			walls[11][3] =  340;
+			walls[9] = [705, 705, 165, 340];		
+		} else {
+			walls[11][3] = 165;
+			walls[9] = [0, 0, 165, 165]		
+		}
+		
+		if(walls[11][1] > red.pos.x && red.pos.x > walls[10][1]){
+			red.pos.x = red.pos.x + toggle[1];
+		}
+		if(walls[11][1] > blue.pos.x && blue.pos.x > walls[10][1]){
+			blue.pos.x = blue.pos.x + toggle[1];
+		}
+		
+		for ( var i = 0; i < walls.length; i++){
+			var newElement = document.createElement('div');
+			
+			newElement.className = 'wall';
+			newElement.style.bottom = walls[i][2];
+			newElement.style.left = walls[i][0];
+			newElement.style.width = walls[i][1] - walls[i][0];
+			newElement.style.height = walls[i][3] - walls[i][2];
+			
+			document.getElementById('arena').appendChild(newElement);
+		}
+		
+		}
+	}
+	
+	function lvl20(){				/***/ // LEVEL TWENTY // /***/
+	 
+		coinx = 440;
+		coiny = 430;	
+
+		document.getElementById('blue1').style.width = '0px';
+		document.getElementById('blue1').style.height = '0px';
+		document.getElementById('blue1').style.left = '0px';
+		document.getElementById('blue1').style.bottom = '0px';
+	
+		document.getElementById('blue2').style.width = '0px';
+		document.getElementById('blue2').style.height = '0px';
+		document.getElementById('blue2').style.left = '0px';
+		document.getElementById('blue2').style.bottom = '0px';
+	
+		document.getElementById('blue3').style.width = '0px';
+		document.getElementById('blue3').style.height = '0px';
+		document.getElementById('blue3').style.left = '0px';
+		document.getElementById('blue3').style.bottom = '0px';
+	
+		document.getElementById('blue4').style.width = '0px';
+		document.getElementById('blue4').style.height = '0px';
+		document.getElementById('blue4').style.left = '0px';
+		document.getElementById('blue4').style.bottom = '0px';
+	
+		document.getElementById('blue5').style.width = '0px';
+		document.getElementById('blue5').style.height = '0px';
+		document.getElementById('blue5').style.left = '0px';
+		document.getElementById('blue5').style.bottom = '0px';
+	
+		document.getElementById('blue6').style.width = '0px';
+		document.getElementById('blue6').style.height = '0px';
+		document.getElementById('blue6').style.left = '0px';
+		document.getElementById('blue6').style.bottom = '0px';
+	
+		document.getElementById('blue7').style.width = '0px';
+		document.getElementById('blue7').style.height = '0px';
+		document.getElementById('blue7').style.left = '0px';
+		document.getElementById('blue7').style.bottom = '0px';
+	
+		document.getElementById('blue8').style.width = '0px';
+		document.getElementById('blue8').style.height = '0px';
+		document.getElementById('blue8').style.left = '0px';
+		document.getElementById('blue8').style.bottom = '0px';
+	
+		document.getElementById('blue9').style.width = '100px';
+		document.getElementById('blue9').style.height = '140px';
+		document.getElementById('blue9').style.left = '705px';
+		document.getElementById('blue9').style.bottom = '350px';
+	
+		document.getElementById('blue10').style.width = '100px';
+		document.getElementById('blue10').style.height = '140px';
+		document.getElementById('blue10').style.left = '95px';
+		document.getElementById('blue10').style.bottom = '350px';
+	
+		document.getElementById('blue11').style.width = '200px';
+		document.getElementById('blue11').style.height = '220px';
+		document.getElementById('blue11').style.left = '505px';
+		document.getElementById('blue11').style.bottom = '265px';
+	
+		document.getElementById('blue12').style.width = '200px';
+		document.getElementById('blue12').style.height = '220px';
+		document.getElementById('blue12').style.left = '195';
+		document.getElementById('blue12').style.bottom = '265px';
+		
+		
+		document.getElementById('white1').style.width = '710px';
+		document.getElementById('white1').style.height = '315px';
+		document.getElementById('white1').style.left = '95px';
+		document.getElementById('white1').style.bottom = '165px';
+
+
+		walls = [
+			[0, 0, 165, 340],
+			[0, 705, 165, 165],
+			[0, 185, 340, 340],
+			[890, 890, 165, 340],
+			[705, 890, 165, 165],
+			[705, 890, 340, 340],
+			[185, 185, 260, 340],
+			[705, 705, 260, 340],
+			[185, 390, 260, 260],
+			[500, 705, 260, 260],
+			[500, 500, 260, 480],
+			[390, 390, 260, 480],
+			[390, 500, 480, 480]
+			
+			];
+		
+		toggle = [
+			true, 1
+		];
+		
+	
+		badguypos[0][0] = 210;
+		badguypos[0][1] = 180;
+		badguypos[1][0] = 350;
+		badguypos[1][1] = 230;
+		badguypos[2][0] = 520;
+		badguypos[2][1] = 180;
+		badguypos[3][0] = 660;
+		badguypos[3][1] = 230;
+		badguypos[4][0] = 407;
+		badguypos[4][1] = 340;
+		badguypos[5][0] = 470;
+		badguypos[5][1] = 390;
+		badguypos[6][0] = 470;
+		badguypos[6][1] = 290;
+		badguypos[7][0] = -1000;
+		badguypos[7][1] = -1000;
+		badguypos[8][0] = -1000;
+		badguypos[8][1] = -1000;
+		badguypos[9][0] = -1000;
+		badguypos[9][1] = -1000;
+		badguypos[10][0] = -1000;
+		badguypos[10][1] = -1000;
+		badguypos[11][0] = -1000;
+		badguypos[11][1] = -1000;
+	
+		countera = 0;
+		
+		badguymove = function(){
+			if(toggle[0] == true){
+				badguypos[0][1] = badguypos[0][1] + 0.8;
+				badguypos[1][1] = badguypos[1][1] - 0.8;
+				badguypos[2][1] = badguypos[2][1] + 0.8;
+				badguypos[3][1] = badguypos[3][1] - 0.8;
+				badguypos[4][0] = badguypos[4][0] + 0.9;
+				badguypos[5][0] = badguypos[5][0] - 0.9;
+				badguypos[6][0] = badguypos[6][0] - 0.9;
+			} else {
+				badguypos[0][1] = badguypos[0][1] - 0.8;
+				badguypos[1][1] = badguypos[1][1] + 0.8;
+				badguypos[2][1] = badguypos[2][1] - 0.8;
+				badguypos[3][1] = badguypos[3][1] + 0.8;
+				badguypos[4][0] = badguypos[4][0] - 0.9;
+				badguypos[5][0] = badguypos[5][0] + 0.9;
+				badguypos[6][0] = badguypos[6][0] + 0.9;
+			}
+			if(badguypos[0][1] > 235){
+				toggle[0] = false;
+			}
+			if(badguypos[0][1] < 175){
+				toggle[0] = true;
+			}
+		}
+	}
+		
+	</script>
+</html>
