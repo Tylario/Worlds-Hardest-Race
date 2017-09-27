@@ -16,13 +16,13 @@
 	#container{
 		position:absolute;
 		top:0%;
-		left:12%;
+		left:12.5%;
 		width:75%;
 		height:99%;
 		background-color:#B5B5FF;
 		border:5px solid black;
 	}
-
+	
 	.wall{
 		position:absolute;
 		border:  solid 5px black;
@@ -342,7 +342,7 @@
 
 	</style>
 	
-	<body>
+	<body onresize="windowSize()">
 		<div id="container">
 			<div id="top_bar">
 				<div id="left">BLUE: <small>wins:
@@ -352,7 +352,7 @@
 					<span id="blue_death">
 					</span></small>
 				</div>
-			<div id="right">
+			<div id="right" >
 			RED: <small>wins: 
 				<span id="red_win">
 				</span> 
@@ -426,6 +426,14 @@
 	</body>
 	
 	<script>
+	
+		windowSize();
+		
+		function windowSize(){
+			var doc = document.getElementById("arena");
+			doc.style.transform = "scale(" + (window.innerHeight+window.innerWidth)/(678+1366) + ")";
+		}
+	
 		if (!Array.prototype.forEach) {
 			Array.prototype.forEach = function (callback) {
 				for (var i = 0; i < this.length; i++) {
@@ -542,7 +550,7 @@
 	}
 	
 	function notify(){
-		alert("Hello! You clicked on the word Tylar.io. That is the creator of this games nickname. Do you like it? If you have any ideas for levels or suggestions email them to me at tyler2hudson@gmail.com or 1634990@student.ucps.k12.nc.us, I will be happy to make it and have your name as well on the level.");
+		alert("If you have any ideas for levels or suggestions email them to me at tyler2hudson@gmail.com or 1634990@student.ucps.k12.nc.us, I will be happy to make it and have your name as well on the level.");
 	}
 	
 	function a(){
